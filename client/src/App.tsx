@@ -1,12 +1,13 @@
-import React from 'react'
-import './App.css'
+import React from "react";
+import "./App.css";
+import Header from "./components/Header/Header";
 
 function App() {
-	return (
-		<div className='App'>
-			<h1>TypScript React Application</h1>
-		</div>
-	)
+  return (
+    <>
+      <Header />
+    </>
+  );
 }
 
-export default App
+export default App;
