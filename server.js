@@ -14,9 +14,10 @@ connectDB()
 
 // routes
 const auth = require('./routes/auth')
+const category = require('./routes/cetegory')
 
 app.use('/api/auth', auth)
-
+app.use('/api/category', category)
 //error handling
 app.use(errorHandler)
 
