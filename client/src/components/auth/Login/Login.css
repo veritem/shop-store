@@ -1,0 +1,43 @@
+.login {
+	background-color: #fff;
+	border-radius: 5px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+	width: 400px;
+	max-width: 100%;
+}
+
+.form-control {
+	margin-bottom: 10px;
+	padding-bottom: 20px;
+	position: relative;
+}
+
+.form-control label {
+	display: inline-block;
+	margin-bottom: 5px;
+}
+
+form {
+	padding: 30px 40px;
+}
+
+.form-control input {
+	border: 2px solid #f0f0f0;
+	border-radius: 4px;
+	display: block;
+	width: 100%;
+	padding: 10px;
+	font-size: 14px;
+	font-family: inherit;
+}
+
+form input[type='submit'] {
+	background-color: #b2003d;
+	color: #fff;
+	padding: 10px;
+	width: 100%;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	font-family: inherit;
+}
