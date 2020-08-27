@@ -1,4 +1,4 @@
-import { Products } from './productStateType'
+import { Products } from './product'
 
 export interface Cart {
 	id: number

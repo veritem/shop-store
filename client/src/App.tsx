@@ -3,23 +3,17 @@ import Header from './components/Header/Header'
 import Footer from './components/Footer/Footer'
 import Products from './components/Products/products'
 import { Switch, Route, BrowserRouter as Router } from 'react-router-dom'
-import Register from './components/auth/Register/Register'
-import Login from './components/auth/Login/Login'
+import { routes } from './routing/routes'
 
 function App() {
 	return (
 		<Router>
 			<Header />
 			<Switch>
-				<Route path='/register'>
-					<Register />
-				</Route>
-				<Route path='/login'>
-					<Login />
-				</Route>
-				<Route path='/'>
+				<Route exact path='/'>
 					<Products />
 				</Route>
+				<Route component={routes} />
 			</Switch>
 			<Footer />
 		</Router>
