@@ -4,17 +4,19 @@ const slugify = require('slugify')
 const ProductSchema = new mongoose.Schema({
 	name: {
 		type: String,
-		required: ['Thisfield is required', true],
+		required: true,
 	},
 	description: {
 		type: String,
 		required: true,
 	},
 
-	slug: String,
+	slug: {
+		type: String,
+		unique: true,
+	},
 	productImage: {
 		type: String,
-		required: true,
 	},
 	price: {
 		type: Number,
@@ -24,15 +26,9 @@ const ProductSchema = new mongoose.Schema({
 		type: Date,
 		default: Date.now,
 	},
-	rating: {
-		type: Number,
-	},
-	category_name: {
-		type: String,
-	},
 })
 
-ProductSchema.pre('save', async (next) => {
+ProductSchema.pre('save', async function (next) {
 	this.slug = slugify(this.name, { lower: true })
 	next()
 })

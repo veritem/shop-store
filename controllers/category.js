@@ -31,7 +31,7 @@ exports.updateCategory = asyncHandler(async (req, res) => {
 	const { id } = req.params
 	const name = req.body
 
-	if (!id || !name) return next(new ErrorResponse('No category found with this id', 403))
+	if (!id || !name) return next(new ErrorResponse('Some thing went wrong', 403))
 
 	const category = await Category.findByIdAndUpdate(id, name, {
 		new: true,
@@ -41,4 +41,8 @@ exports.updateCategory = asyncHandler(async (req, res) => {
 		category,
 	})
 })
-exports.deleteCategory = () => {}
+exports.deleteCategory = asyncHandler(async () => {
+	const { id } = req.params
+	await Category.findByIdAndRemove(id)
+	res.status(200).json({ success: true })
+})

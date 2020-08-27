@@ -77,7 +77,7 @@ Technology Requirements
 
 - https://github.com/piotrwitek/react-redux-typescript-guide
 - https://github.com/typescript-cheatsheets/react
-
+- https://programmingwithmosh.com/react/simple-react-autocomplete-component/
 
 ## Models
 
@@ -122,3 +122,10 @@ Before deleting category we first have to delete products under that category
    - price
    - count
    - date_created
+
+> Planning about the redux store
+
+- Productsreducer
+- categories
+- authReducer
+- CartItem

@@ -1,10 +1,10 @@
 const express = require('express')
-const { route } = require('./auth')
-const router = express.Router()
 
-const { protect } = '../middleware/auth'
+const { protect } = require('../middleware/auth')
 
 const { getCategories, getCategory, addCategory, updateCategory, deleteCategory } = require('../controllers/category')
+
+const router = express.Router()
 
 router.get('/', getCategories)
 router.get('/:id', getCategory)
