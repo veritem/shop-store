@@ -1,8 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+:root {
+	--whitish: #f1f3de;
+	--second-whitish: #eb8f8f;
+	--red: #ec0101;
+	--dark-red: #cd0a0a;
+}
 
 * {
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Alata', sans-serif;
+}
+
+body {
+	background-color: var(--whitish);
 }

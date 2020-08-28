@@ -1,21 +1,17 @@
 import React from 'react'
-import Header from './components/Header/Header'
-import Footer from './components/Footer/Footer'
-import Products from './components/Products/products'
 import { Switch, Route, BrowserRouter as Router } from 'react-router-dom'
 import { routes } from './routing/routes'
+import Home from './containers/Home/Home'
 
 function App() {
 	return (
 		<Router>
-			<Header />
 			<Switch>
 				<Route exact path='/'>
-					<Products />
+					<Home />
 				</Route>
 				<Route component={routes} />
 			</Switch>
-			<Footer />
 		</Router>
 	)
 }

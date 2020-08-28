@@ -5,6 +5,13 @@
 
 ### Time frame is for two weeks upto 3rd september
 
+
+#### Design
+
+- https://dribbble.com/shots/6714974-Shop-Women-s-Clothing-Web-Page/attachments
+- https://dribbble.com/shots/14048596-E-tiketka-marketplace-service-for-banks/attachments/5667019?mode=media
+- https://dribbble.com/shots/4828084-Shopping-Cart-UI
+
 - Build a fullstack e-cormerce application and host it somewhere on internet
 - Intergate payment
 - perform testing
@@ -77,13 +84,13 @@ Technology Requirements
 
 - https://github.com/piotrwitek/react-redux-typescript-guide
 - https://github.com/typescript-cheatsheets/react
-- https://programmingwithmosh.com/react/simple-react-autocomplete-component/
+-
 
 ## Models
 
 1. customers model
     - names
-    - username
+    - usernam
     - email
     - Gender
     - Password
