@@ -1,0 +1,28 @@
+.intro {
+	margin-top: 2rem;
+}
+
+.intro h1 {
+	text-align: center;
+	padding-bottom: 2rem;
+}
+
+.intro__elements {
+	display: flex;
+	background-color: #fff;
+	padding: 3rem;
+	border-radius: 0.5rem;
+	justify-content: space-evenly;
+}
+
+.intro__elements div {
+	display: flex;
+	margin-right: 2rem;
+	justify-content: space-between;
+}
+
+.intro__elements div i {
+	font-size: 2.5rem;
+	margin-right: 1rem;
+	color: var(--second-whitish);
+}
