@@ -38,6 +38,7 @@
 	height: 200px;
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 	border-radius: 0.1rem;
+	z-index: 100;
 }
 
 .searchCat ul.showList {

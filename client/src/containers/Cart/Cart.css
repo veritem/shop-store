@@ -29,6 +29,10 @@
 	text-align: center;
 }
 
+.order_summary {
+	width: 15rem;
+}
+
 .order_summary_header {
 	display: flex;
 	align-items: center;
@@ -36,22 +40,104 @@
 	padding: 2rem;
 }
 
-/* .form-control {
-	margin-bottom: 10px;
-	padding-bottom: 20px;
-	position: relative;
+.order_shipping_adress {
+	margin-bottom: 1.5rem;
 }
 
-.form-control label {
-	display: inline-block;
-	margin-bottom: 5px;
-}
-.form-control input {
-	border: 2px solid #f0f0f0;
-	border-radius: 4px;
+.order_shipping_adress > * {
 	display: block;
+	margin-bottom: 10px;
 	width: 100%;
+}
+.order_shipping_adress input {
+	font-size: 1rem;
+}
+
+.promo__code > * {
+	display: inline-block;
+}
+
+input[type='text'] {
+	border: 1px solid #ccc;
+	background-color: transparent;
+	padding: 3px;
+	outline: none;
+	border-radius: 5px;
+}
+
+.promo__code input[type='submit'] {
+	margin-left: 1rem;
+	background-color: var(--dark-red);
+	border: none;
+	color: #fff;
+	padding: 5px 10px;
+	border-radius: 5px;
+	outline: none;
+}
+
+.cost {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	font-weight: bolder;
+	font-size: 1.5rem;
+}
+
+.checkout {
+	background-color: var(--dark-red);
+	color: #fff;
+	width: 100%;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 10px;
+	cursor: pointer;
+	outline: none;
+}
+
+.product_list_item {
+	display: grid;
+	width: 600px;
+	grid-template-columns: 40% 50% 10%;
+	justify-content: center;
+	align-items: center;
+	border-bottom: 1px solid #ccc;
+}
+
+.product_desc {
+	display: flex;
+	flex-direction: column;
+}
+.product_desc p {
+	color: var(--dark-red);
+	margin-top: 10px;
+	cursor: pointer;
+}
+
+.cart_operation {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.product_list_item img {
+	width: 200px;
+	height: 200px;
+}
+.cart_operation button {
+	background-color: #fff;
+	border: 1px solid #ccc;
 	padding: 10px;
-	font-size: 14px;
-	font-family: inherit;
-} */
+	margin: 5px;
+	border-radius: 5px;
+	cursor: pointer;
+	outline: none;
+}
+
+.back {
+	margin-top: 10px;
+}
+.back a {
+	text-decoration: none;
+	color: #d40000;
+}

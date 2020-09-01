@@ -1,6 +1,9 @@
 import React from 'react'
 import './Cart.css'
 
+import imac from '../../assets/products/imac.png'
+import { Link } from 'react-router-dom'
+
 function Cart() {
 	return (
 		<section className='Cart'>
@@ -8,6 +11,61 @@ function Cart() {
 				<div className='cart_list_header'>
 					<h2>Shopping Cart</h2>
 					<h2>3 Items</h2>
+				</div>
+
+				<div className='product_list_items'>
+					<div className='product_list_item'>
+						<img src={imac} alt='imac' />
+						<div className='product_desc'>
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo,
+							voluptates.
+							<p> Remove </p>
+						</div>
+						<div className='cart_operation'>
+							<button>+</button>
+							<p contentEditable>0</p>
+							<button>-</button>
+						</div>
+					</div>
+				</div>
+
+				<div className='product_list_items'>
+					<div className='product_list_item'>
+						<img src={imac} alt='imac' />
+						<div className='product_desc'>
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo,
+							voluptates.
+							<p> Remove </p>
+						</div>
+						<div className='cart_operation'>
+							<button>+</button>
+							<p contentEditable>0</p>
+							<button>-</button>
+						</div>
+					</div>
+				</div>
+
+				<div className='product_list_items'>
+					<div className='product_list_item'>
+						<img src={imac} alt='imac' />
+						<div className='product_desc'>
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo,
+							voluptates.
+							<p> Remove </p>
+						</div>
+						<div className='cart_operation'>
+							<button>+</button>
+							<p contentEditable>0</p>
+							<button>-</button>
+						</div>
+					</div>
+				</div>
+
+				<div className='back'>
+					<Link to='/'>
+						{' '}
+						<i className='fas fa-arrow-left' /> Continue Shopping
+					</Link>
 				</div>
 			</div>
 
@@ -36,7 +94,7 @@ function Cart() {
 					<p>$20200</p>
 				</div>
 
-				<button>CHECKOUT</button>
+				<button className='checkout'>CHECKOUT</button>
 			</div>
 		</section>
 	)

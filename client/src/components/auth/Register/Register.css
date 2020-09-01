@@ -3,7 +3,12 @@
 	border-radius: 5px;
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 	width: 400px;
-	max-width: 100%;
+	/* max-width: 100%; */
+}
+
+.register h1 {
+	text-align: center;
+	padding: 0 1rem;
 }
 
 .form-control {

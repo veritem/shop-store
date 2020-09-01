@@ -6,6 +6,10 @@
 	max-width: 100%;
 }
 
+.login h1 {
+	text-align: center;
+}
+
 .form-control {
 	margin-bottom: 10px;
 	padding-bottom: 20px;

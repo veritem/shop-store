@@ -1,8 +1,9 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom'
-import Register from '../components/auth/Register/Register'
-import Login from '../components/auth/Login/Login'
 import Cart from '../containers/Cart/Cart'
+import LoginPage from '../containers/Login/LoginPage'
+import RegisterPage from '../containers/RegisterPage/RegisterPage'
+import ProductDetails from '../containers/ProductDetails/ProductDetails'
 
 export const routes = () => {
 	return (
@@ -11,11 +12,14 @@ export const routes = () => {
 				<Route path='/cart'>
 					<Cart />
 				</Route>
+				<Route>
+					<ProductDetails />
+				</Route>
 				<Route path='/register'>
-					<Register />
+					<RegisterPage />
 				</Route>
 				<Route path='/login'>
-					<Login />
+					<LoginPage />
 				</Route>
 			</Switch>
 		</>

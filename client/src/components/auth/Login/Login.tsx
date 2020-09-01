@@ -9,15 +9,15 @@ function Login() {
 			<form>
 				<div className='form-control'>
 					<label htmlFor='email'>Email</label>
-					<input type='text' placeholder='Enter fulll name' id='email' />
+					<input type='text' placeholder='Enter full name' id='email' />
 				</div>
 
 				<div className='form-control'>
 					<label htmlFor='password1'>Password</label>
-					<input type='text' placeholder='Enter fulll name' id='password1' />
+					<input type='password' placeholder='Enter your password' id='password1' />
 				</div>
 
-				<input type='submit' value='Submit' />
+				<input type='submit' value='Login into your account' />
 			</form>
 		</div>
 	)
