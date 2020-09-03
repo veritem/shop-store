@@ -1,0 +1,38 @@
+.product_description {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+.product img {
+	width: 400px;
+}
+
+.product_info {
+	width: 500px;
+}
+.product_info h1 {
+	padding-bottom: 2rem;
+}
+.product_info p {
+	margin-bottom: 2rem;
+}
+
+.product_info input {
+	margin-bottom: 2rem;
+	font-size: 1rem;
+	padding: 10px 20px;
+}
+
+.product_info button {
+	width: 100%;
+	padding: 0.5rem;
+	border-radius: 1rem;
+	background-color: #ec0101;
+	outline: none;
+	border: none;
+	color: #fff;
+	font-size: 1rem;
+	cursor: pointer;
+}
