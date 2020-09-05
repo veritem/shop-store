@@ -3,7 +3,7 @@ import imac from '../../assets/products/imac.png'
 import './ProductDetails.css'
 
 function ProductDetails() {
-	const [quantity, setQuantity] = useState<string>('0')
+	const [quantity, setQuantity] = useState<string>('1')
 
 	return (
 		<>
