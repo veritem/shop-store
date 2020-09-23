@@ -1,25 +1,27 @@
-import React, { MouseEvent } from 'react'
+import React, { MouseEvent, useRef } from 'react'
 import './SearchBar.css'
 
 function SearchBar() {
+	const cat_list = useRef<HTMLUListElement | null>(null)
+	const cat_curr = useRef<HTMLSpanElement | null>(null)
+
 	function handleCatList() {
-		const categoriesList = document.querySelector('.searchCat ul')
-		categoriesList?.classList.toggle('showList')
+		cat_list.current?.classList.toggle('showList')
 	}
 
 	function handleToggle(event: MouseEvent<HTMLLIElement>) {
 		const selectedValue = event.currentTarget.innerText
-		document.querySelector<HTMLSpanElement>('.current_cat span')!.innerText = selectedValue
-		document.querySelector('.searchCat ul')?.classList.remove('showList')
+		cat_curr.current!.innerText = selectedValue
+		cat_list.current?.classList.remove('showList')
 	}
 
 	return (
 		<div className='searchBar'>
 			<div className='searchCat'>
 				<div className='current_cat' onClick={handleCatList}>
-					<span>All</span> <i className='fas fa-caret-down'></i>
+					<span ref={cat_curr}>All</span> <i className='fas fa-caret-down'></i>
 				</div>
-				<ul>
+				<ul ref={cat_list}>
 					<li onClick={handleToggle}>All</li>
 					<li onClick={handleToggle}>Food</li>
 					<li onClick={handleToggle}>Fashion</li>

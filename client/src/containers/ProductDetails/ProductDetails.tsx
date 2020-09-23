@@ -1,15 +1,38 @@
-import React, { useState } from 'react'
+import React, { MouseEvent, useState, useRef } from 'react'
 import imac from '../../assets/products/imac.png'
 import './ProductDetails.css'
 
 function ProductDetails() {
 	const [quantity, setQuantity] = useState<string>('1')
 
+	const resultZoom = useRef<HTMLDivElement | null>(null)
+	const productImg = useRef<HTMLImageElement | null>(null)
+
+	function handleMouseMove(e: MouseEvent<HTMLImageElement>) {
+		resultZoom.current?.classList.add('active')
+	}
+
+	function handleMouseLeave(e: MouseEvent<HTMLImageElement>) {
+		resultZoom.current?.classList.remove('active')
+	}
+
 	return (
 		<>
 			<section className='product_description'>
 				<div className='product'>
-					<img src={imac} alt='imac' />
+					<img
+						src={imac}
+						alt='imac'
+						id='prod_img'
+						ref={productImg}
+						onMouseMove={(event: MouseEvent<HTMLImageElement>): void =>
+							handleMouseMove(event)
+						}
+						onMouseLeave={(event: MouseEvent<HTMLImageElement>): void =>
+							handleMouseLeave(event)
+						}
+					/>
+					<div className='zoom_results' ref={resultZoom}></div>
 				</div>
 				<div className='product_info'>
 					<h1>Product className rating</h1>
