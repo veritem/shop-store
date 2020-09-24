@@ -1,19 +1,20 @@
 export interface productStateType {
-  loading: boolean;
-  data: Products[];
-  errors?: string;
+  loading: boolean
+  data: Product[]
+  errors?: string
 }
 
-export interface Products {
-  id: string;
-  name: string;
-  price: string;
-  image: string;
-  description: string;
+export interface Product {
+  id: string
+  name: string
+  price: number
+  imageUrl: string
+  description: string
+  quantity?: number
 }
 
 export enum ProductActionTypes {
-  FETCH_REQUEST = "FETCH_REQUEST",
-  FETCH_SUCCESS = "FETCH_SUCCESS",
-  FETCH_ERROR = "FETCH_ERROR",
+  FETCH_REQUEST = 'FETCH_REQUEST',
+  FETCH_SUCCESS = 'FETCH_SUCCESS',
+  FETCH_ERROR = 'FETCH_ERROR',
 }

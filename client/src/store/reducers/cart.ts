@@ -45,7 +45,9 @@ export const cartReducer = (state = initalState, action: any) => {
         data: {
           ...state.data,
           id: state.data.id,
-          items: state.data.items.filter((item) => item !== action.payload.id),
+          items: state.data.items.filter(
+            (item) => item.id !== action.payload.id
+          ),
         },
       }
     default:

@@ -20,7 +20,7 @@ function PopularProducts() {
 						<h3>$100</h3>
 						<p>from $200</p>
 					</div>
-					<button>Add to cart</button>
+					<button>Shop now</button>
 				</div>
 				<div>
 					<img src={shoe} alt='imac_png' />
@@ -32,7 +32,7 @@ function PopularProducts() {
 						<h3>$100</h3>
 						<p>from $200</p>
 					</div>
-					<button>Add to cart</button>
+					<button>Shop now</button>
 				</div>
 				<div>
 					<img src={watch} alt='imac_png' />
@@ -44,7 +44,7 @@ function PopularProducts() {
 						<h3>$100</h3>
 						<p>from $200</p>
 					</div>
-					<button>Add to cart</button>
+					<button>Shop now</button>
 				</div>
 				<div>
 					<img src={fashion} alt='imac_png' />
@@ -57,7 +57,7 @@ function PopularProducts() {
 						<p>from $200</p>
 					</div>
 
-					<button>Add to cart</button>
+					<button>Shop now</button>
 				</div>
 			</div>
 		</section>

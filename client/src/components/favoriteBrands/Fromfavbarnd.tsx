@@ -1,68 +1,46 @@
 import React from 'react'
-import imac from '../../assets/products/imac.png'
-import shoe from '../../assets/products/shoe.png'
-import watch from '../../assets/products/watch.png'
-import fashion from '../../assets/products/fashion.png'
 import './Fromfavbarnd.css'
+import { addtoCart } from '../../store/actionsCreators/cartsActions'
+import { useDispatch, useSelector } from 'react-redux'
+import { RootState } from '../../store/reducers'
+import { Product, productStateType } from '../../store/types/product'
 
 function Fromfavbarnd() {
-	return (
-		<section className='favouriteBrand'>
-			<h1>From all of you favourite brands</h1>
+  const dispatch = useDispatch()
+  const productsState: productStateType = useSelector(
+    (state: RootState) => state.products
+  )
 
-			<div className='products'>
-				<div>
-					<img src={imac} alt='imac_png' />
-					<p className='description'>
-						Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi, recusandae.
-					</p>
+  const { data } = productsState
 
-					<div className='price'>
-						<h3>$100</h3>
-						<p>from $200</p>
-					</div>
-					<button>Add to cart</button>
-				</div>
-				<div>
-					<img src={shoe} alt='imac_png' />
-					<p className='description'>
-						Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi, recusandae.
-					</p>
+  const addToCart = (product: Product) => {
+    dispatch(addtoCart(product))
+  }
 
-					<div className='price'>
-						<h3>$100</h3>
-						<p>from $200</p>
-					</div>
-					<button>Add to cart</button>
-				</div>
-				<div>
-					<img src={watch} alt='imac_png' />
-					<p className='description'>
-						Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi, recusandae.
-					</p>
+  return (
+    <section className='favouriteBrand'>
+      <h1>From all of you favourite brands</h1>
 
-					<div className='price'>
-						<h3>$100</h3>
-						<p>from $200</p>
-					</div>
-					<button>Add to cart</button>
-				</div>
-				<div>
-					<img src={fashion} alt='imac_png' />
-					<p className='description'>
-						Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi, recusandae.
-					</p>
+      <div className='products'>
+        {data.length > 0 ? (
+          data.map((item) => (
+            <div key={item.id}>
+              <img src={item.imageUrl} alt='imac_png' />
+              <p className='description'>{item.description}</p>
 
-					<div className='price'>
-						<h3>$100</h3>
-						<p>from $200</p>
-					</div>
-
-					<button>Add to cart</button>
-				</div>
-			</div>
-		</section>
-	)
+              <div className='price'>
+                <h3>${item.price}</h3>
+                <p>from ${item.price * item.price + 100} </p>
+              </div>
+              <button onClick={() => addToCart(item)}>Shop now</button>
+            </div>
+          ))
+        ) : (
+          <h1>No data</h1>
+        )}
+      </div>
+    </section>
+  )
 }
 
 export default Fromfavbarnd

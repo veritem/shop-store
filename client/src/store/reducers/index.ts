@@ -4,11 +4,13 @@ import { productReducer } from './product'
 import authReducer from './auth'
 import { categoryReducer } from './category'
 
-const allReducers = combineReducers({
-	cartItem: cartReducer,
-	products: productReducer,
-	auth: authReducer,
-	categories: categoryReducer,
+const rootReducer = combineReducers({
+  cartItem: cartReducer,
+  products: productReducer,
+  auth: authReducer,
+  categories: categoryReducer,
 })
 
-export default allReducers
+export type RootState = ReturnType<typeof rootReducer>
+
+export default rootReducer
