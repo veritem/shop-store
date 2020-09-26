@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Cart.css'
 import { useHistory } from 'react-router'
 import { Link } from 'react-router-dom'
@@ -12,7 +12,40 @@ import {
 } from '../../store/actionsCreators/cartsActions'
 import { countItems, countItemsPrice } from '../../utils/cartItemsHelpers'
 
+import StripeCheckout from 'react-stripe-checkout'
+
 function Cart() {
+  const [product, setproduct] = useState({
+    name: 'AMAVON',
+    price: 10,
+    productBy: 'Amazon',
+  })
+
+  console.log(process.env.REACT_APP_STRIPE_KEY)
+
+  const makePayment = (token: any) => {
+    console.log(token)
+    const body = {
+      token,
+      product,
+    }
+    const headers = {
+      'Content-Type': 'application/json',
+    }
+
+    return fetch(`http://localhost:5000/api/payment`, {
+      method: 'POST',
+      headers,
+      body: JSON.stringify(body),
+    })
+      .then((response) => {
+        console.log(response)
+        const { status } = response
+        console.log('STATUS ', status)
+      })
+      .catch((error) => console.log(error))
+  }
+
   const cartItem: cartStateType = useSelector(
     (state: RootState) => state.cartItem
   )
@@ -100,7 +133,14 @@ function Cart() {
             <p>${countItemsPrice(cartItem)}</p>
           </div>
 
-          <button className='checkout'>CHECKOUT</button>
+          <StripeCheckout
+            stripeKey={`${process.env.REACT_APP_STRIPE_KEY}`}
+            token={makePayment}
+            name='By this product'
+            amount={product.price * 100}
+          >
+            <button className='checkout'>CHECKOUT</button>
+          </StripeCheckout>
         </div>
       )}
     </section>
