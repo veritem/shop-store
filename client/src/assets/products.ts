@@ -8,6 +8,7 @@ export const products: Product[] = [
     description: 'Number one high perfomant computer',
     imageUrl:
       'https://images.unsplash.com/photo-1584647819148-e0ad1bcb418e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=751&q=80',
+    quantity: 0,
   },
   {
     id: '2',
@@ -16,6 +17,7 @@ export const products: Product[] = [
     description: 'Number one high perfomant mobile phone',
     imageUrl:
       'https://images.unsplash.com/photo-1574315042633-364f61395801?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80',
+    quantity: 0,
   },
   {
     id: '3',
@@ -24,6 +26,7 @@ export const products: Product[] = [
     description: 'Number one high perfomant watch',
     imageUrl:
       'https://images.unsplash.com/photo-1546868871-7041f2a55e12?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=80',
+    quantity: 0,
   },
   {
     id: '4',
@@ -32,5 +35,6 @@ export const products: Product[] = [
     description: 'Number one high perfomant iPod',
     imageUrl:
       'https://images.unsplash.com/photo-1527697911963-20cb424e9608?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=764&q=80',
+    quantity: 0,
   },
 ]

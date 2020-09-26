@@ -10,7 +10,7 @@ export interface Product {
   price: number
   imageUrl: string
   description: string
-  quantity?: number
+  quantity: number
 }
 
 export enum ProductActionTypes {

@@ -5,7 +5,12 @@ import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from '../../store/reducers'
 import { cartStateType } from '../../store/types/cart'
-import { removeFromCart } from '../../store/actionsCreators/cartsActions'
+import {
+  removeFromCart,
+  incrementItem,
+  decrementItem,
+} from '../../store/actionsCreators/cartsActions'
+import { countItems, countItemsPrice } from '../../utils/cartItemsHelpers'
 
 function Cart() {
   const cartItem: cartStateType = useSelector(
@@ -23,12 +28,20 @@ function Cart() {
     history.push('/cart')
   }
 
+  const HandleincrementItem = (id: string) => {
+    dispatch(incrementItem(id))
+  }
+
+  const handleDcrementItem = (id: string) => {
+    dispatch(decrementItem(id))
+  }
+
   return (
     <section className='Cart'>
       <div className='card_list'>
         <div className='cart_list_header'>
           <h2>Shopping Cart</h2>
-          <h2>{items.length} Items</h2>
+          <h2>{countItems(cartItem)} Items</h2>
         </div>
 
         <div className='product_list_items'>
@@ -41,9 +54,11 @@ function Cart() {
                   <p onClick={() => removeItemFromCart(item.id)}> Remove </p>
                 </div>
                 <div className='cart_operation'>
-                  <button>+</button>
-                  <p>0</p>
-                  <button>-</button>
+                  <button onClick={() => HandleincrementItem(item.id)}>
+                    +
+                  </button>
+                  <p>{item.quantity}</p>
+                  <button onClick={() => handleDcrementItem(item.id)}>-</button>
                 </div>
               </div>
             ))
@@ -54,39 +69,40 @@ function Cart() {
 
         <div className='back'>
           <Link to='/'>
-            {' '}
             <i className='fas fa-arrow-left' /> Continue Shopping
           </Link>
         </div>
       </div>
 
-      <div className='order_summary'>
-        <div className='order_summ_header'>
-          <h2>Order summary</h2>
-        </div>
-        <div className='order_summary_header'>
-          <h3>3 Items</h3>
-          <h3>$2040</h3>
-        </div>
+      {items.length > 0 && (
+        <div className='order_summary'>
+          <div className='order_summ_header'>
+            <h2>Order summary</h2>
+          </div>
+          <div className='order_summary_header'>
+            <h3>{countItems(cartItem)} Items</h3>
+            <h3> ${countItemsPrice(cartItem)}</h3>
+          </div>
 
-        <div className='order_shipping_adress'>
-          <label htmlFor='shipping'>Shipping adress</label>
-          <input type='text' id='shipping adress' />
-        </div>
+          <div className='order_shipping_adress'>
+            <label htmlFor='shipping'>Shipping adress</label>
+            <input type='text' id='shipping adress' />
+          </div>
 
-        <div className='promo__code'>
-          <label htmlFor='promocode'>Promo code</label>
-          <input type='text' id='promocode' />
-          <input type='submit' value='APPLY' />
-        </div>
+          <div className='promo__code'>
+            <label htmlFor='promocode'>Promo code</label>
+            <input type='text' id='promocode' />
+            <input type='submit' value='APPLY' />
+          </div>
 
-        <div className='cost'>
-          <p>Total cost</p>
-          <p>$20200</p>
-        </div>
+          <div className='cost'>
+            <p>Total cost</p>
+            <p>${countItemsPrice(cartItem)}</p>
+          </div>
 
-        <button className='checkout'>CHECKOUT</button>
-      </div>
+          <button className='checkout'>CHECKOUT</button>
+        </div>
+      )}
     </section>
   )
 }

@@ -22,7 +22,7 @@ function Fromfavbarnd() {
 
   return (
     <section className='favouriteBrand'>
-      <h1>From all of you favourite brands</h1>
+      <h1>From all of your favourite brands</h1>
 
       <div className='products'>
         {data.length > 0 ? (

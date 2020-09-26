@@ -35,25 +35,48 @@ export const cartReducer = (state = initalState, action: any) => {
 
       if (index === -1) {
         return {
-          errors: state.errors,
-          loading: state.loading,
           data: {
             ...state.data,
-            id: state.loading,
-            items: [...state.data.items, action.payload],
+            items: [...state.data.items, { ...action.payload, quantity: 1 }],
           },
         }
       }
       return state
     case cartActionTypes.REMOVE_FROM_CART:
       return {
-        error: state.errors,
-        loading: state.loading,
+        ...state,
         data: {
           ...state.data,
-          id: state.data.id,
           items: state.data.items.filter(
             (item) => item.id !== action.payload.id
+          ),
+        },
+      }
+
+    case cartActionTypes.INCREMENT_QUANTITY:
+      return {
+        ...state,
+        data: {
+          ...state.data,
+          items: state.data.items.map((it) =>
+            it.id === action.payload.id
+              ? { ...it, quantity: it.quantity += 1 }
+              : it
+          ),
+        },
+      }
+    case cartActionTypes.DECREMENT_QUANTITY:
+      return {
+        ...state,
+        data: {
+          ...state.data,
+          items: state.data.items.map((it) =>
+            it.id === action.payload.id
+              ? {
+                  ...it,
+                  quantity: it.quantity > 1 ? (it.quantity -= 1) : it.quantity,
+                }
+              : it
           ),
         },
       }
