@@ -29,15 +29,22 @@ export const cartReducer = (state = initalState, action: any) => {
         errors: action.payload,
       }
     case cartActionTypes.ADD_TO_CART:
-      return {
-        errors: state.errors,
-        loading: state.loading,
-        data: {
-          ...state.data,
-          id: state.loading,
-          items: [...state.data.items, action.payload],
-        },
+      let index = state.data.items.findIndex(
+        (product) => product.id === action.payload.id
+      )
+
+      if (index === -1) {
+        return {
+          errors: state.errors,
+          loading: state.loading,
+          data: {
+            ...state.data,
+            id: state.loading,
+            items: [...state.data.items, action.payload],
+          },
+        }
       }
+      return state
     case cartActionTypes.REMOVE_FROM_CART:
       return {
         error: state.errors,
