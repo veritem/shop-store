@@ -4,16 +4,16 @@ import { routes } from './routing/routes'
 import Home from './containers/Home/Home'
 
 function App() {
-	return (
-		<Router>
-			<Switch>
-				<Route exact path='/'>
-					<Home />
-				</Route>
-				<Route component={routes} />
-			</Switch>
-		</Router>
-	)
+  return (
+    <Router>
+      <Switch>
+        <Route exact path='/'>
+          <Home />
+        </Route>
+        <Route component={routes} />
+      </Switch>
+    </Router>
+  )
 }
 
 export default App

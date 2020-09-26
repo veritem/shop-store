@@ -4,6 +4,7 @@ import { addtoCart } from '../../store/actionsCreators/cartsActions'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from '../../store/reducers'
 import { Product, productStateType } from '../../store/types/product'
+import { useHistory } from 'react-router-dom'
 
 function Fromfavbarnd() {
   const dispatch = useDispatch()
@@ -12,9 +13,11 @@ function Fromfavbarnd() {
   )
 
   const { data } = productsState
+  const history = useHistory()
 
   const addToCart = (product: Product) => {
     dispatch(addtoCart(product))
+    history.push('/cart')
   }
 
   return (
