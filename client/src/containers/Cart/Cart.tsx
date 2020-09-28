@@ -21,7 +21,6 @@ function Cart() {
     productBy: 'Amazon',
   })
 
-  console.log(process.env.REACT_APP_STRIPE_KEY)
 
   const makePayment = (token: any) => {
     console.log(token)
