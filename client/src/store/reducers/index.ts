@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux'
 import { cartReducer } from './cart'
 import { productReducer } from './product'
-import authReducer from './auth'
+import { authReducer } from './auth'
 import { categoryReducer } from './category'
 
 const rootReducer = combineReducers({
