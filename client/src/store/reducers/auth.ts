@@ -4,7 +4,7 @@ const initalState: authStateType = {
   loading: false,
   token: '',
   user: {
-    id: '',
+    _id: '',
     names: '',
     password: '',
     email: '',
@@ -19,6 +19,24 @@ export const authReducer = (state = initalState, action: any) => {
         ...state,
         loading: false,
         errors: action.payload,
+      }
+    case AuthActionTypes.LOGIN_FETCH_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+      }
+    case AuthActionTypes.LOGIN_FETCH_ERROR:
+      return {
+        ...state,
+        loading: false,
+        token: '',
+        user: {
+          id: '',
+          names: '',
+          password: '',
+          email: '',
+        },
+        error: 'Something went wrong',
       }
     case AuthActionTypes.LOGIN_SUCCESS:
       return {

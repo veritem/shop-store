@@ -1,16 +1,20 @@
 import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
 import { loadUser, login } from '../../../store/actionsCreators/authActions'
+import { appDispatch } from '../../../store/index'
 import './Login.css'
 
 function Login() {
   const [email, setEmail] = useState<string>('')
   const [password, setPassword] = useState<string>('')
 
+  const disaptch: appDispatch = useDispatch()
+
   const handleForms = (e: React.FormEvent) => {
     e.preventDefault()
     if (email && password) {
-      login(email, password)
-      loadUser()
+      disaptch(login(email, password))
+      disaptch(loadUser())
     }
   }
 

@@ -5,21 +5,25 @@ import { AppThunk } from '../types/appThunk'
 
 const { setData, GetData } = useLocalStorage('token')
 
-export const login = (email: string, password: string): AppThunk => {
-  console.log(email, password)
-  return async dispatch => {
-    const body = { email, password }
-    try {
-      const resp = await Axios.post(
-        'http://localhost:5000/api/auth/login',
-        body
-      )
-      const { token } = resp.data
+export const login = (
+  email: string,
+  password: string
+): AppThunk => async dispatch => {
+  const body = { email, password }
+  try {
+    const resp = (
+      await Axios.post('http://localhost:5000/api/auth/login', body)
+    ).data
+    const { token } = resp
+
+    if (token) {
       setData(token)
       dispatch({ type: AuthActionTypes.LOGIN_FETCH_SUCCESS })
-    } catch (error) {
+    } else {
       dispatch({ type: AuthActionTypes.LOGIN_FETCH_ERROR })
     }
+  } catch (error) {
+    dispatch({ type: AuthActionTypes.LOGIN_FETCH_ERROR })
   }
 }
 
@@ -35,7 +39,6 @@ export const loadUser = (): AppThunk => async dispatch => {
 
     const { user } = resp.data
 
-    console.log(user)
     dispatch({
       type: AuthActionTypes.LOGIN_SUCCESS,
       payload: {
@@ -44,6 +47,7 @@ export const loadUser = (): AppThunk => async dispatch => {
       },
     })
   } catch (error) {
+    console.log(error)
     dispatch({ type: AuthActionTypes.LOGIN_FAILURE })
   }
 }

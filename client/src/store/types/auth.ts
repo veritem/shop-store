@@ -6,7 +6,7 @@ export interface authStateType {
 }
 
 export interface User {
-  id: string
+  _id: string
   names: string
   password: string
   email: string
