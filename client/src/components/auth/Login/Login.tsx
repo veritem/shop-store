@@ -1,18 +1,16 @@
 import React, { useState } from 'react'
-import { useDispatch } from 'react-redux'
 import { loadUser, login } from '../../../store/actionsCreators/authActions'
 import './Login.css'
 
 function Login() {
   const [email, setEmail] = useState<string>('')
   const [password, setPassword] = useState<string>('')
-  const dispatch = useDispatch()
 
   const handleForms = (e: React.FormEvent) => {
     e.preventDefault()
     if (email && password) {
-      dispatch(login(email, password))
-      dispatch(loadUser())
+      login(email, password)
+      loadUser()
     }
   }
 
@@ -37,6 +35,7 @@ function Login() {
             type='password'
             placeholder='Enter your password'
             id='password1'
+            autoComplete='true'
             value={password}
             onChange={e => setPassword(e.target.value)}
           />

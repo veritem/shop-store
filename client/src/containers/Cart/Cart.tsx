@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './Cart.css'
 import { useHistory } from 'react-router'
 import { Link } from 'react-router-dom'
@@ -15,12 +15,11 @@ import { countItems, countItemsPrice } from '../../utils/cartItemsHelpers'
 import StripeCheckout from 'react-stripe-checkout'
 
 function Cart() {
-  const [product, setproduct] = useState({
+  const product = {
     name: 'AMAVON',
     price: 10,
     productBy: 'Amazon',
-  })
-
+  }
 
   const makePayment = (token: any) => {
     console.log(token)
@@ -37,12 +36,12 @@ function Cart() {
       headers,
       body: JSON.stringify(body),
     })
-      .then((response) => {
+      .then(response => {
         console.log(response)
         const { status } = response
         console.log('STATUS ', status)
       })
-      .catch((error) => console.log(error))
+      .catch(error => console.log(error))
   }
 
   const cartItem: cartStateType = useSelector(
@@ -78,7 +77,7 @@ function Cart() {
 
         <div className='product_list_items'>
           {items.length > 0 ? (
-            items.map((item) => (
+            items.map(item => (
               <div className='product_list_item' key={item.id}>
                 <img src={item.imageUrl} alt={item.name} />
                 <div className='product_desc'>
