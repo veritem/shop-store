@@ -58,6 +58,33 @@ export const authReducer = (state = initalState, action: any) => {
         },
         errors: '',
       }
+
+    case AuthActionTypes.REGISTER_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        token: action.payload.token,
+        user: {
+          id: '',
+          names: '',
+          password: '',
+          email: '',
+        },
+        errors: '',
+      }
+    case AuthActionTypes.REGISTER_FAILURE:
+      return {
+        ...state,
+        loading: false,
+        token: '',
+        user: {
+          id: '',
+          names: '',
+          password: '',
+          email: '',
+        },
+        errors: 'Registration failed',
+      }
     default:
       return state
   }

@@ -1,5 +1,6 @@
 function useLocalStorage(key: string) {
   const setData = (data: any) => {
+    clearData()
     return localStorage.setItem(key, data)
   }
   const GetData = () => {

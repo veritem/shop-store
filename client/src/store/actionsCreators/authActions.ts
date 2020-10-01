@@ -47,7 +47,26 @@ export const loadUser = (): AppThunk => async dispatch => {
       },
     })
   } catch (error) {
-    console.log(error)
     dispatch({ type: AuthActionTypes.LOGIN_FAILURE })
+  }
+}
+
+export const registerUser = (
+  names: string,
+  email: string,
+  password: string
+): AppThunk => async dispatch => {
+  try {
+    const body = { names, email, password }
+    const resp = await Axios.post(
+      `http://localhost:5000/api/auth/register`,
+      body
+    )
+    const { token } = resp.data
+    await setData(token)
+    dispatch({ type: AuthActionTypes.REGISTER_SUCCESS, payload: { token } })
+  } catch (error) {
+    console.log(error)
+    dispatch({ type: AuthActionTypes.REGISTER_FAILURE })
   }
 }

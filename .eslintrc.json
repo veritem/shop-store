@@ -9,7 +9,7 @@
   },
   "rules": {
     "semi": "error",
-    "no-console": "warn",
+    "no-console": "error",
     "no-var": "error"
   },
   "env": {
