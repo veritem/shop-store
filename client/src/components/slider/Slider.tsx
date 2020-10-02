@@ -53,7 +53,7 @@ function Slider() {
               overflow: 'hidden',
               background: 'white',
               borderRadius: '30px',
-              //   top: '-px',
+              top: '-45px',
             }}
             key={index}
             initial={{ scale: 0, rotate: -180 }}
