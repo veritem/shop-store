@@ -1,6 +1,6 @@
 import React from 'react'
 import './Fromfavbarnd.css'
-import { addtoCart } from '../../store/actionsCreators/cartsActions'
+import { addtoCart } from '../../store/actions/cartsActions'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from '../../store/reducers'
 import { Product, productStateType } from '../../store/types/product'
@@ -26,7 +26,7 @@ function Fromfavbarnd() {
 
       <div className='products'>
         {data.length > 0 ? (
-          data.map((item) => (
+          data.map(item => (
             <div key={item.id}>
               <img src={item.imageUrl} alt='imac_png' />
               <p className='description'>{item.description}</p>

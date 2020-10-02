@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { appDispatch } from 'src/store'
-import { loadUser, registerUser } from 'src/store/actionsCreators/authActions'
+import { loadUser, registerUser } from 'src/store/actions/authActions'
 import './Register.css'
 
 function Register() {

@@ -1,38 +1,86 @@
 import React, { useState } from 'react'
-import './Slider.css'
-// import watch from '../../assets/products/watch.png'
-// import { motion, AnimatePresence } from 'framer-motion'
 import { images } from './imageData'
+import { motion } from 'framer-motion'
+import { Swipeable, useSwipeable } from 'react-swipeable'
 
 function Slider() {
-	const [currentSlide, setCurrentSlide] = useState(0)
+  const [position, setPosition] = useState(0)
 
-	const handlePrev = () => {
-		currentSlide === 0 ? setCurrentSlide(images.length - 1) : setCurrentSlide(currentSlide - 1)
-		console.log(images[currentSlide], currentSlide)
-	}
-	const handleNext = () => {
-		currentSlide === images.length - 1 ? setCurrentSlide(0) : setCurrentSlide(currentSlide + 1)
-		console.log(images[currentSlide], currentSlide)
-	}
-	return (
-		<div className='slider'>
-			<img src={images[currentSlide]} alt='hoe' />
-			<div className='controllers'>
-				<button className='previous' onClick={handlePrev}>
-					<i className='fas fa-arrow-left'></i>
-				</button>
-				<button className='next' onClick={handleNext}>
-					<i className='fas fa-arrow-right'></i>
-				</button>
-			</div>
-			<ul className='slide_indicators'>
-				{images.map((im, i) => (
-					<li key={`${i}`}></li>
-				))}
-			</ul>
-		</div>
-	)
+  const handleSwipeRight = () => {
+    if (position < images.length - 1) {
+      setPosition(position + 1)
+    }
+  }
+
+  const handleSwipeLeft = () => {
+    if (position > 0) {
+      setPosition(position - 1)
+    }
+  }
+
+  const swipeHandlers = useSwipeable({
+    onSwipedRight: () => handleSwipeRight(),
+    onSwipedLeft: () => handleSwipeLeft(),
+  })
+
+  return (
+    <div
+      style={{
+        height: '50vh',
+        width: '100vw',
+        overflow: 'hidden',
+        padding: '0px',
+        margin: '0px',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        background:
+          'linear-gradient(180deg, rgb(255, 94, 0), rgb(143, 133, 49))',
+      }}
+    >
+      <div
+        {...swipeHandlers}
+        style={{
+          position: 'relative',
+        }}
+      >
+        {images.map((url, index) => (
+          <motion.div
+            style={{
+              position: 'absolute',
+              width: '100vw',
+              height: '100vh',
+              overflow: 'hidden',
+              background: 'white',
+              borderRadius: '30px',
+              //   top: '-px',
+            }}
+            key={index}
+            initial={{ scale: 0, rotate: -180 }}
+            animate={{
+              rotate: 0,
+              left: `${(index - position) * 60 - 30}vw`,
+              scale: index - position ? 1 : 0.8,
+            }}
+            transition={{
+              type: 'spring',
+              stiffness: 260,
+              damping: 20,
+            }}
+          >
+            <img
+              src={url}
+              style={{
+                height: '100%',
+                width: '100%',
+              }}
+              alt={`${url}-${index}`}
+            />
+          </motion.div>
+        ))}
+      </div>
+    </div>
+  )
 }
 
 export default Slider

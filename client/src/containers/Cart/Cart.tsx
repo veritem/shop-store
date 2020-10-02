@@ -9,7 +9,7 @@ import {
   removeFromCart,
   incrementItem,
   decrementItem,
-} from '../../store/actionsCreators/cartsActions'
+} from '../../store/actions/cartsActions'
 import { countItems, countItemsPrice } from '../../utils/cartItemsHelpers'
 
 import StripeCheckout from 'react-stripe-checkout'

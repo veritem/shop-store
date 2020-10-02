@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { loadUser, login } from '../../../store/actionsCreators/authActions'
+import { loadUser, login } from '../../../store/actions/authActions'
 import { appDispatch } from '../../../store/index'
 import './Login.css'
 
