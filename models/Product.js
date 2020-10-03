@@ -15,12 +15,17 @@ const ProductSchema = new mongoose.Schema({
     type: String,
     unique: true,
   },
-  productImage: {
+  imageUrl: {
     type: String,
+    required: true,
   },
   price: {
     type: Number,
     require: true,
+  },
+  inStock: {
+    type: Number,
+    required: true,
   },
   created_at: {
     type: Date,
