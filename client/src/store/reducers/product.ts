@@ -1,4 +1,4 @@
-import { productStateType, ProductActionTypes, Product } from '../types/product'
+import { productStateType, ProductActionTypes } from '../types/product'
 
 const initialState: productStateType = {
   data: [],

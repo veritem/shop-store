@@ -12,7 +12,10 @@ export const login = (
   const body = { email, password }
   try {
     const resp = (
-      await Axios.post('http://localhost:5000/api/auth/login', body)
+      await Axios.post(
+        `${process.env.REACT_APP_BACKEND_URL}/api/auth/login`,
+        body
+      )
     ).data
     const { token } = resp
 
@@ -31,11 +34,14 @@ export const loadUser = (): AppThunk => async dispatch => {
   const token = GetData()
 
   try {
-    const resp = await Axios.get('http://localhost:5000/api/auth/me', {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    })
+    const resp = await Axios.get(
+      `${process.env.REACT_APP_BACKEND_URL}/api/auth/me`,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    )
 
     const { user } = resp.data
 
@@ -59,7 +65,7 @@ export const registerUser = (
   try {
     const body = { names, email, password }
     const resp = await Axios.post(
-      `http://localhost:5000/api/auth/register`,
+      `${process.env.REACT_APP_BACKEND_URL}/api/auth/register`,
       body
     )
     const { token } = resp.data

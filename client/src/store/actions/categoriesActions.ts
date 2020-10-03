@@ -6,7 +6,9 @@ export const fetchCategories = (): AppThunk => {
   return async dispatch => {
     dispatch({ type: categoryActionTypes.FETCH_CATEGORIES })
     try {
-      const res = (await axios.get('http://localhost:5000/api/category')).data
+      const res = (
+        await axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/category`)
+      ).data
       dispatch({
         type: categoryActionTypes.FETCH_SUCCESS,
         payload: res.data,
