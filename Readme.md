@@ -1,39 +1,21 @@
-# Amavm
+# Shopping store
 
-## Goals for this projects
+> This is not for production, I did it for Learning  Purposes
 
+#### User stories
 
-### Time frame is for two weeks upto 3rd september
-
-
-#### Design
-
-- https://dribbble.com/shots/6714974-Shop-Women-s-Clothing-Web-Page/attachments
-- https://dribbble.com/shots/14048596-E-tiketka-marketplace-service-for-banks/attachments/5667019?mode=media
-- https://dribbble.com/shots/4828084-Shopping-Cart-UI
-
-- Build a fullstack e-cormerce application and host it somewhere on internet
-- Intergate payment
-- perform testing
-- Create interactive and beatfull page
-- User can create an account with username and password or auth0
-
-
-User stories
-
-- [ ] User can view categories of products
-- [ ] User can user can view products depending on the category he/she choose
-- [ ] Great search for products
+- [ ] User can view products available in the store
+- [ ] User can user can view products by cetegory
+- [ ] User can search for products in the store
 - [ ] User can search for products in categories
-- [ ] User can add items to card
-- [ ] User can view see more details about the product
+- [ ] User can add items to cart
+- [ ] User can see more details about the product and add review about the products
 - [ ] User can check out items in cart
 - [ ] User can login with either username and password
 - [ ] For more details to page user can change the number of items
-- [ ] In carts page user can change items
-- [ ] Add a wish list option
-- [ ] Sharing option products easly
-- [ ] Shipping and delivery information
+- [ ] In cart user can add or remove items from there
+- [ ] Add products to wish list option
+- [ ] User can view orders history
 - [ ] Zoom Option for pictures
 - [ ] Bestseller Products on Homepage
 - [ ] Add Customer name on homepage
@@ -42,97 +24,36 @@ User stories
 - [ ] Suppliers can mamage products adding them and updating the
 - [ ] Auto complete for products searching
 
+#### Adminstrator stories
 
-Technology Requirements
+- [ ] admin can view all registered users
+- [ ] admin can delete users from the store
+- [ ] admin can add products into the store
+- [ ] admin can edit products information
+- [ ] admin should approve orders
+- [ ] admin can cancel product order
+
+#### Tech Stack
 
 > Backend
 
-  - Nodejs
-  - Express
-  - MongoDb
+  - Nodejs / ExpressJs
+  - MongoDB
 
 > Frontend
 
-  - TypeScript
-  - Reactjs
+  - Reactjs with TypeScript
   - FramerMotion for animation
-  - scss
-  - Redux
+  - Emotion for general stayling
+  - Redux for state management
 
-> Payment Intergration
+> Payment Gateways
 
   - Stripe
-
+  - PayPal
 
 > App testing
 
   - Jest
-  - React_testing_libary
-
-
-> Tasks Chuck Down
-
-- [ ] Describe the database Design on a paper and anlyse the resources for database
-- [ ] Design the routes endpoint on a paper
-- [ ] Implement the design of the database
-- [ ] Initialize the server
-
-
-
-
-> Usefull links
-
-- https://github.com/piotrwitek/react-redux-typescript-guide
-- https://github.com/typescript-cheatsheets/react
--
-
-## Models
-
-1. customers model
-    - names
-    - usernam
-    - email
-    - Gender
-    - Password
-    - Time joined
-
-2. Products categories model
-    - category_name
-    - created_at
-
-Before deleting category we first have to delete products under that category
-
-1. Products model
-    - Product_name
-    - slug
-    - Priduct_desc
-    - Product_img
-    - Product_price
-    - created_at
-    - updated_at
-    - Review
-
-2. Wish list model
-
-3. Orders
-   - product: ref product
-   - transaction_id
-   - amount
-   - adress
-   - status:{ processed}
-   - lasr_updated
-   - user: ref user
-
-4. CartItem
-   - product: {ref:Product}
-   - name
-   - price
-   - count
-   - date_created
-
-> Planning about the redux store
-
-- Productsreducer
-- categories
-- authReducer
-- CartItem
+  - React testing libary
+  - Cypres
