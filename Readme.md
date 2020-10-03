@@ -4,25 +4,24 @@
 
 #### User stories
 
-- [ ] User can view products available in the store
+- [x] User can view products available in the store
 - [ ] User can user can view products by cetegory
 - [ ] User can search for products in the store
 - [ ] User can search for products in categories
-- [ ] User can add items to cart
+- [ ] Auto complete for products searching
+- [x] User can add items to cart
 - [ ] User can see more details about the product and add review about the products
 - [ ] User can check out items in cart
-- [ ] User can login with either username and password
+- [x] User can login with either username and password
+- [x] User can be registered
 - [ ] For more details to page user can change the number of items
-- [ ] In cart user can add or remove items from there
+- [x] In cart user can add more or remove items from there
 - [ ] Add products to wish list option
 - [ ] User can view orders history
 - [ ] Zoom Option for pictures
 - [ ] Bestseller Products on Homepage
-- [ ] Add Customer name on homepage
+- [ ] user can view his/her information
 - [ ] Ability for customers to sort products according to prices
-- [ ] Account for suppliers of the website
-- [ ] Suppliers can mamage products adding them and updating the
-- [ ] Auto complete for products searching
 
 #### Adminstrator stories
 
