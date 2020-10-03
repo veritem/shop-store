@@ -1,22 +1,13 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import './CatHeader.css'
 import { Link } from 'react-router-dom'
-import { appDispatch } from 'src/store'
-import { useDispatch } from 'react-redux'
-import { fetchCategories } from 'src/store/actions/categoriesActions'
 import { useTypedSelector } from '../../store/reducers/index'
 import { categoryStateType } from 'src/store/types/category'
 
 export default function CatHeader() {
-  const disaptch: appDispatch = useDispatch()
-
   const CategoryState: categoryStateType = useTypedSelector(
     state => state.categories
   )
-
-  useEffect(() => {
-    disaptch(fetchCategories())
-  }, [disaptch])
 
   return CategoryState.isloading ? (
     <h2>Loading...</h2>
@@ -34,7 +25,7 @@ export default function CatHeader() {
         {CategoryState.categories.map(
           (cat, index) =>
             index <= 5 && (
-              <li key={cat.id}>
+              <li key={index}>
                 <Link to='#'> {cat.name}</Link>
               </li>
             )

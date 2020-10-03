@@ -1,8 +1,7 @@
-import { products } from '../../assets/products'
-import { productStateType, ProductActionTypes } from '../types/product'
+import { productStateType, ProductActionTypes, Product } from '../types/product'
 
 const initialState: productStateType = {
-  data: products,
+  data: [],
   errors: undefined,
   loading: false,
 }
@@ -15,6 +14,7 @@ export const productReducer = (state = initialState, action: any) => {
         loading: true,
       }
     case ProductActionTypes.FETCH_SUCCESS:
+      console.log(action)
       return {
         ...state,
         loading: false,
