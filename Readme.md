@@ -55,4 +55,4 @@
 
   - Jest
   - React testing libary
-  - Cypres
+  - Cypress
