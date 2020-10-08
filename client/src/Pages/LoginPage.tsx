@@ -95,6 +95,16 @@ function LoginPage() {
               autoComplete='true'
               value={password}
               onChange={e => setPassword(e.target.value)}
+              css={css`
+                border: 2px solid #f0f0f0;
+                border-radius: 4px;
+                display: block;
+                width: 100%;
+                padding: 10px;
+                font-size: 14px;
+                font-family: inherit;
+                margin-bottom: 1rem;
+              `}
             />
           </div>
 
