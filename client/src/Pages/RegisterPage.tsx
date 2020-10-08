@@ -1,7 +1,6 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
-import Register from '../../components/auth/Register/Register'
-import './RegisterPage.css'
+import Register from '../components/auth/Register/Register'
 
 function RegisterPage() {
   return (

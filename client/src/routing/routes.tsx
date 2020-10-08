@@ -1,8 +1,8 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom'
-import Cart from '../Pages/Cart/Cart'
+import Cart from '../Pages/Cart'
 import LoginPage from '../Pages/LoginPage'
-import RegisterPage from '../Pages/RegisterPage/RegisterPage'
+import RegisterPage from '../Pages/RegisterPage'
 
 export const routes = () => {
   return (
