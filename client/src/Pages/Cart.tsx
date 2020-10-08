@@ -255,7 +255,21 @@ function Cart() {
             `}
           >
             <label htmlFor='shipping'>Shipping adress</label>
-            <input type='text' id='shipping adress' />
+            <input
+              type='text'
+              id='shipping adress'
+              css={css`
+                margin-left: 1rem;
+                background-color: transparent;
+                border: 1px solid #ccc;
+                color: #fff;
+                width: 100%;
+                font-size: 1rem;
+                padding: 5px 10px;
+                border-radius: 5px;
+                outline: none;
+              `}
+            />
           </div>
 
           <div
