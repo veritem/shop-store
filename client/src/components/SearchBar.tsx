@@ -109,6 +109,7 @@ function SearchBar() {
           width: 100%;
           padding: 0 1rem;
           font-size: 1rem;
+          outline: none;
           border: none !important;
           border-top-right-radius: 1rem;
           border-bottom-right-radius: 1rem;

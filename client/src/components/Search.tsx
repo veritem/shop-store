@@ -117,14 +117,6 @@ function Search(searchProp: SearchProps) {
       `}
     >
       <input
-        css={css`
-	 input[type='search'] {
-	padding: 10px 5px;
-	font-size: 1.5rem;
-	color: #1f5350;
-	border: none;
-	background-color: #ffff;
-	  `}
         type='search'
         value={searchQuery}
         onChange={(ev: React.ChangeEvent<HTMLInputElement>): void =>
@@ -133,8 +125,16 @@ function Search(searchProp: SearchProps) {
         onKeyDown={(ev: React.KeyboardEvent<HTMLInputElement>): void =>
           onkeydown(ev.keyCode)
         }
+        css={css`
+          input[type='search'] {
+            padding: 10px 5px;
+            font-size: 1.5rem;
+            color: #1f5350;
+            border: none;
+            background-color: #ffff;
+          }
+        `}
       />
-
       {listsuggestion}
     </section>
   )
