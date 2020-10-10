@@ -2,11 +2,8 @@ const Product = require('../models/Product')
 const ErrorResponse = require('../util/errorResponse')
 const asyncHandler = require('../middleware/async')
 
-exports.getProducts = async (req, res) => {
-  const products = await Product.find()
-  res
-    .status(200)
-    .json({ count: products.length, success: true, data: products })
+exports.getProducts = async (req, res, next) => {
+  res.status(200).json(res.advancedResults)
 }
 exports.getProduct = async (req, res) => {
   const { id } = req.params
