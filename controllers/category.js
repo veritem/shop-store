@@ -5,6 +5,7 @@ exports.getCategories = async (req, res) => {
   const cat = await Category.find().populate('Product')
   res.status(200).json({ success: true, data: cat })
 }
+
 exports.getCategory = async (req, res) => {
   const { id } = req.params
 
@@ -13,6 +14,7 @@ exports.getCategory = async (req, res) => {
   if (!catFind) {
     return next(new ErrorResponse('No category found with this id', 403))
   }
+
   res.status(200).json({ success: true, data: catFind })
 }
 exports.addCategory = asyncHandler(async (req, res) => {
@@ -26,6 +28,7 @@ exports.addCategory = asyncHandler(async (req, res) => {
 
   res.status(201).json({ success: true, data: newCat })
 })
+
 exports.updateCategory = asyncHandler(async (req, res) => {
   const { id } = req.params
   const name = req.body
@@ -40,6 +43,7 @@ exports.updateCategory = asyncHandler(async (req, res) => {
     category,
   })
 })
+
 exports.deleteCategory = asyncHandler(async () => {
   const { id } = req.params
   await Category.findByIdAndRemove(id)

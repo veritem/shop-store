@@ -17,37 +17,10 @@ exports.getProduct = async (req, res) => {
     .json({ count: findProduct.length, success: true, data: findProduct })
 }
 exports.addProduct = asyncHandler(async (req, res, next) => {
-  const { name, description, price, inStock, imageUrl } = req.body
+  const { name, description, price, inStock, imageUrl, category } = req.body
 
-  if (!name | !description | !price | !inStock | !imageUrl)
+  if ((!name | !description | !price | !inStock | !imageUrl, !category))
     return next(new ErrorResponse('All filed are required', 403))
-
-  //   const file = req.files.file
-
-  //   //Make sure file is a photo
-  //   if (!file.mimetype.startsWith('image')) {
-  //     return next(new ErrorResponse(`Please upload an image file`, 400))
-  //   }
-
-  //   if (file.size > process.env.FILE_UPLOAD_SIZE) {
-  //     return next(
-  //       new ErrorResponse(
-  //         `Please upload an image less than ${process.env.FILE_UPLOAD_SIZE}`,
-  //         400
-  //       )
-  //     )
-  //   }
-
-  //   //create custom filenane
-  //   file.name = `photo_${profile._id}${path.parse(file.name).ext}`
-
-  //   file.mv(`${process.env.FILE_UPLOAD_PATH}/${file.name}`, async err => {
-  //     if (err) {
-  //       return next(
-  //         new ErrorResponse(`Problem occured while uploading file`, 500)
-  //       )
-  //     }
-  //   })
 
   const newProduct = await Product.create({
     name,
@@ -55,6 +28,7 @@ exports.addProduct = asyncHandler(async (req, res, next) => {
     price,
     imageUrl,
     inStock,
+    category,
   })
 
   res.status(200).json({ success: true, data: newProduct })
