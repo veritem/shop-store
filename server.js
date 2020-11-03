@@ -33,7 +33,7 @@ app.use('/api/auth', auth)
 app.use('/api/category', category)
 app.use('/api/product', product)
 app.use('/api/payment', payments)
-app.use('/api/cart',cart)
+app.use('/api/cart', cart)
 
 //error handling
 app.use(errorHandler)
