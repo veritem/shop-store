@@ -1,8 +1,9 @@
-/** @jsx jsx */
+
 
 import cartImg from '../assets/others/1cart.png'
 import { Link } from 'react-router-dom'
 import { css, jsx } from '@emotion/core'
+import React from 'react'
 
 function MartkettingBanner() {
   return (

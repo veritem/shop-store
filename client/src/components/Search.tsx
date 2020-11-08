@@ -1,6 +1,6 @@
-/** @jsx jsx */
+
 import { css, jsx } from '@emotion/core'
-import { useState } from 'react'
+import React,{ useState } from 'react'
 
 interface SearchProps {
   searchSuggestions: string[]

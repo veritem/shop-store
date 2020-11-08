@@ -1,8 +1,8 @@
-/** @jsx jsx */
 import { css, jsx } from '@emotion/core'
 import { Link } from 'react-router-dom'
 import { useTypedSelector } from '../store/reducers/index'
 import { categoryStateType } from 'src/store/types/category'
+import React from 'react'
 
 export default function CatHeader() {
   const CategoryState: categoryStateType = useTypedSelector(

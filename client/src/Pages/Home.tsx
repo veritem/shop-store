@@ -1,4 +1,3 @@
-/** @jsx jsx */
 import { css, jsx } from '@emotion/core'
 import { Fragment, useEffect } from 'react'
 import Header from './Header/Header'
@@ -13,6 +12,7 @@ import { appDispatch } from 'src/store'
 import { useDispatch } from 'react-redux'
 import { fetchProducts } from 'src/store/actions/productAction'
 import { fetchCategories } from 'src/store/actions/categoriesActions'
+import React from 'react'
 
 export default function Home() {
   const dispatch: appDispatch = useDispatch()

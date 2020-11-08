@@ -1,5 +1,5 @@
-/** @jsx jsx */
 import { css, jsx } from '@emotion/core'
+import React from 'react'
 import { useState } from 'react'
 import { MouseEvent, useRef } from 'react'
 import { useTypedSelector } from 'src/store/reducers'

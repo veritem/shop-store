@@ -1,9 +1,9 @@
 import Axios from 'axios'
 import { AuthActionTypes } from '../types/auth'
-import { useLocalStorage } from '../../hooks'
+// import { useLocalStorage } from '../../hooks'
 import { AppThunk } from '../types/appThunk'
 
-const { setData, GetData } = useLocalStorage('token')
+// const { setData, GetData } = useLocalStorage('token')
 
 export const login = (
   email: string,
@@ -20,7 +20,7 @@ export const login = (
     const { token } = resp
 
     if (token) {
-      setData(token)
+      // setData(token)
       dispatch({ type: AuthActionTypes.LOGIN_FETCH_SUCCESS })
     } else {
       dispatch({ type: AuthActionTypes.LOGIN_FETCH_ERROR })
@@ -31,7 +31,7 @@ export const login = (
 }
 
 export const loadUser = (): AppThunk => async dispatch => {
-  const token = GetData()
+  const token = ''
 
   try {
     const resp = await Axios.get(
@@ -69,7 +69,7 @@ export const registerUser = (
       body
     )
     const { token } = resp.data
-    await setData(token)
+    // await setData(token)
     dispatch({ type: AuthActionTypes.REGISTER_SUCCESS, payload: { token } })
   } catch (error) {
     console.log(error)

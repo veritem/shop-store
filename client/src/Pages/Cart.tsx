@@ -1,4 +1,3 @@
-/** @jsx jsx */
 import { css, jsx } from '@emotion/core'
 import { useHistory } from 'react-router'
 import { Link } from 'react-router-dom'
@@ -12,7 +11,8 @@ import {
 } from '../store/actions/cartsActions'
 import { countItems, countItemsPrice } from '../utils/cartItemsHelpers'
 
-import StripeCheckout from 'react-stripe-checkout'
+// import StripeCheckout from 'react-stripe-checkout'
+import React from 'react'
 
 function Cart() {
   const product = {
@@ -321,7 +321,7 @@ function Cart() {
             <p>${countItemsPrice(cartItem)}</p>
           </div>
 
-          <StripeCheckout
+          {/* <StripeCheckout
             stripeKey={`${process.env.REACT_APP_STRIPE_KEY}`}
             token={makePayment}
             name='By this product'
@@ -342,7 +342,7 @@ function Cart() {
             >
               CHECKOUT
             </button>
-          </StripeCheckout>
+          </StripeCheckout> */}
         </div>
       )}
     </section>

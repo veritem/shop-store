@@ -1,10 +1,11 @@
-/** @jsx jsx */
+
 
 import imac from '../assets/products/imac.png'
 import shoe from '../assets/products/shoe.png'
 import watch from '../assets/products/watch.png'
 import fashion from '../assets/products/fashion.png'
 import { css, jsx } from '@emotion/core'
+import React from 'react'
 
 function PopularProducts() {
   return (

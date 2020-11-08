@@ -1,9 +1,9 @@
-/** @jsx jsx */
 import { css, jsx } from '@emotion/core'
 import { useDispatch } from 'react-redux'
 import { useState } from 'react'
 import { loadUser, login } from '../store/actions/authActions'
 import { appDispatch } from '../store'
+import React from 'react'
 
 function LoginPage() {
   const [email, setEmail] = useState<string>('')

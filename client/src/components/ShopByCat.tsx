@@ -1,10 +1,11 @@
-/** @jsx jsx */
+
 
 import smartPhones from '../assets/categories/smartPhones.png'
 import homeApplicants from '../assets/categories/home.png'
 import tvs from '../assets/categories/tvs.png'
 import fashion from '../assets/categories/fashion.png'
 import { css, jsx } from '@emotion/core'
+import React from 'react'
 
 function ShopByCat() {
   return (

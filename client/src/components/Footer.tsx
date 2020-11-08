@@ -1,7 +1,6 @@
-/** @jsx jsx */
-
 import { Fragment } from 'react'
 import { css, jsx } from '@emotion/core'
+import React from 'react'
 
 function Footer() {
   return (
