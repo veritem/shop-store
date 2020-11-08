@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from '../store/reducers'
 import { Product, productStateType } from '../store/types/product'
 import { useHistory } from 'react-router-dom'
-import { css, jsx } from '@emotion/core'
+import { css   } from '@emotion/core'
 import React from 'react'
 
 function Fromfavbarnd() {

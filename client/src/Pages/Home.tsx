@@ -1,4 +1,4 @@
-import { css, jsx } from '@emotion/core'
+import { css   } from '@emotion/core'
 import { Fragment, useEffect } from 'react'
 import Header from './Header/Header'
 import Intro from '../components/Intro'

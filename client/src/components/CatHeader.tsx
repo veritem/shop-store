@@ -1,4 +1,4 @@
-import { css, jsx } from '@emotion/core'
+import { css   } from '@emotion/core'
 import { Link } from 'react-router-dom'
 import { useTypedSelector } from '../store/reducers/index'
 import { categoryStateType } from 'src/store/types/category'

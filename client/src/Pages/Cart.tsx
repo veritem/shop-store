@@ -1,4 +1,4 @@
-import { css, jsx } from '@emotion/core'
+import { css   } from '@emotion/core'
 import { useHistory } from 'react-router'
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
@@ -15,34 +15,34 @@ import { countItems, countItemsPrice } from '../utils/cartItemsHelpers'
 import React from 'react'
 
 function Cart() {
-  const product = {
-    name: 'AMAVON',
-    price: 10,
-    productBy: 'Amazon',
-  }
+  // const product = {
+  //   name: 'AMAVON',
+  //   price: 10,
+  //   productBy: 'Amazon',
+  // }
 
-  const makePayment = (token: any) => {
-    console.log(token)
-    const body = {
-      token,
-      product,
-    }
-    const headers = {
-      'Content-Type': 'application/json',
-    }
+  // const makePayment = (token: any) => {
+  //   console.log(token)
+  //   const body = {
+  //     token,
+  //     product,
+  //   }
+  //   const headers = {
+  //     'Content-Type': 'application/json',
+  //   }
 
-    return fetch(`http://localhost:5000/api/payment`, {
-      method: 'POST',
-      headers,
-      body: JSON.stringify(body),
-    })
-      .then(response => {
-        console.log(response)
-        const { status } = response
-        console.log('STATUS ', status)
-      })
-      .catch(error => console.log(error))
-  }
+  //   return fetch(`http://localhost:5000/api/payment`, {
+  //     method: 'POST',
+  //     headers,
+  //     body: JSON.stringify(body),
+  //   })
+  //     .then(response => {
+  //       console.log(response)
+  //       const { status } = response
+  //       console.log('STATUS ', status)
+  //     })
+  //     .catch(error => console.log(error))
+  // }
 
   const cartItem: cartStateType = useSelector(
     (state: RootState) => state.cartItem
