@@ -44,7 +44,11 @@ exports.searchProducts = asyncHandler(async (req, res, next) => {
   if (!product) return next(new ErrorResponse('No search term was passed', 403))
 
   const findProduct = await Product.find({
-    name: { $regex: '.*' + product + '.*' },
+    $text: {
+      $search: product,
+      $language: 'en',
+      $caseSensitive: false,
+    },
   })
 
   res.status(200).json({ success: true, data: findProduct })
