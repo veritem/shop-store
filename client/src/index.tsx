@@ -19,7 +19,6 @@ ReactDOM.render(
             --red: #ec0101;
             --dark-red: #cd0a0a;
           }
-
           * {
             box-sizing: border-box;
             margin: 0;

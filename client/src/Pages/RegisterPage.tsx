@@ -1,4 +1,8 @@
-import { css   } from '@emotion/core'
+/** @jsxImportSource @emotion/core */
+
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import {css,jsx} from '@emotion/core'
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { appDispatch } from 'src/store'

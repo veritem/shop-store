@@ -1,4 +1,8 @@
-import { css   } from '@emotion/core'
+/** @jsxImportSource @emotion/core */
+
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import {css,jsx} from '@emotion/core'
 import { Link } from 'react-router-dom'
 import { useTypedSelector } from '../store/reducers/index'
 import { categoryStateType } from 'src/store/types/category'
@@ -10,7 +14,7 @@ export default function CatHeader() {
   )
 
   return CategoryState.isloading ? (
-    <h2>Loading...</h2>
+    <h2>Loading....</h2>
   ) : (
     <div
       css={css`
@@ -41,7 +45,6 @@ export default function CatHeader() {
               display: flex;
               justify-content: space-evenly;
               align-items: center;
-              /* place-items: center; */
               font-size: 1rem;
               border-right: 3px solid var(--second-whitish);
               padding-right: 2rem;

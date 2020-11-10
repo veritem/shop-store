@@ -1,4 +1,7 @@
-import { css   } from '@emotion/core'
+/** @jsxImportSource @emotion/core */
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import {css,jsx} from '@emotion/core'
 import { useHistory } from 'react-router'
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'

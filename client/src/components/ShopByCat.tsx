@@ -1,10 +1,12 @@
+/** @jsxImportSource @emotion/core */
 
 
 import smartPhones from '../assets/categories/smartPhones.png'
 import homeApplicants from '../assets/categories/home.png'
 import tvs from '../assets/categories/tvs.png'
 import fashion from '../assets/categories/fashion.png'
-import { css   } from '@emotion/core'
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import { css,jsx} from '@emotion/core'
 import React from 'react'
 
 function ShopByCat() {

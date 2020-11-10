@@ -1,4 +1,7 @@
-import { css   } from '@emotion/core'
+/** @jsxImportSource @emotion/core */
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import {css,jsx} from '@emotion/core'
 import { Fragment, useEffect } from 'react'
 import Header from './Header/Header'
 import Intro from '../components/Intro'
