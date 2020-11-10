@@ -10,7 +10,7 @@
   "rules": {
     "semi": "error",
     "no-console": "error",
-    "no-var": "error"
+    "no-var": "off"
   },
   "env": {
     "browser": true,

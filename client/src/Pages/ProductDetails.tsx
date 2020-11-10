@@ -1,12 +1,13 @@
+/** @jsxImportSource @emotion/core */
+
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import {css,jsx} from '@emotion/core'
 import React from 'react'
-import { useState, useRef, Fragment,useEffect } from 'react'
+import { useState,useEffect } from 'react'
 import {useParams} from 'react-router-dom'
 import axios from 'axios'
 
 function ProductDetails() {
-  const [quantity, setQuantity] = useState<string>('1')
   const [product,setProduct] = useState({
     _id:'',
     price:0,
@@ -39,94 +40,54 @@ function ProductDetails() {
     }, [id])
 
 
-  const resultZoom = useRef<HTMLDivElement | null>(null)
-  // const productImg = useRef<HTMLImageElement | null>(null)
-
-  // function handleMouseMove(e: MouseEvent<HTMLImageElement>) {
-  //   resultZoom.current?.classList.add('active')
-  // }
-
-  // function handleMouseLeave(e: MouseEvent<HTMLImageElement>) {
-  //   resultZoom.current?.classList.remove('active')
-  // }
 
 
   return (
-    <Fragment>
+
       <section
         css={css`
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          height: 100vh;
+          display:flex;
+            align-items:center;
+            justify-content:center;
+            height:100vh;
         `}
       >
         <div
-          className='product'
           css={css`
-            position: relative;
+          margin-right:2rem;
           `}
         >
-          <p>{product.name}</p>
-          <p>{product.category.name}</p>
-          {/* <img
-            src={imac}
+          <img
+            src={product.imageUrl}
             alt='imac'
             id='prod_img'
-            ref={productImg}
             css={css`
-              width: 400px;
+            width:400px;
             `}
-            onMouseMove={(event: MouseEvent<HTMLImageElement>): void =>
-              handleMouseMove(event)
-            }
-            onMouseLeave={(event: MouseEvent<HTMLImageElement>): void =>
-              handleMouseLeave(event)
-            }
-          /> */}
-          <div className='zoom_results' ref={resultZoom}></div>
+          />
         </div>
         <div
           className='product_info'
-          css={css`
-            width: 500px;
-          `}
         >
-          <h1
-            css={css`
-              padding-bottom: 2rem;
-            `}
-          >
-            Product className rating
-          </h1>
+          <h1>{product.name} </h1>
+           <h2 css={css`
+              font-style: italic;
+                  font-weight: normal;
+                  font-size: 1rem;
+                  margin-bottom:30px;
+           `}>{product.category.name}</h2>
+           <p css={css`
+           margin-bottom:1rem;
+           `}>${product.price}</p>
           <p
             css={css`
               margin-bottom: 2rem;
             `}
           >
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi id
-            asperiores iusto itaque nemo inventore qui, doloremque dolorum
-            pariatur harum dignissimos? Quaerat illo repellendus temporibus!
-            Voluptate rem aliquid illum odio.
+            {product.description}
           </p>
-          <div>
-            <input
-              type='number'
-              name='prod_num'
-              min='1'
-              max='1000'
-              value={quantity}
-              onChange={e => setQuantity(e.target.value)}
-              css={css`
-                margin-bottom: 2rem;
-                font-size: 1rem;
-                padding: 10px 20px;
-              `}
-            />
-          </div>
           <button
             css={css`
-              width: 100%;
               padding: 0.5rem;
               border-radius: 1rem;
               background-color: #ec0101;
@@ -141,7 +102,7 @@ function ProductDetails() {
           </button>
         </div>
       </section>
-    </Fragment>
+
   )
 }
 
