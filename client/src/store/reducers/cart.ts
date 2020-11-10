@@ -30,7 +30,7 @@ export const cartReducer = (state = initalState, action: any) => {
       }
     case cartActionTypes.ADD_TO_CART:
       let index = state.data.items.findIndex(
-        (product) => product._id === action.payload.id
+        (product) => product._id === action.payload._id
       )
 
       if (index === -1) {

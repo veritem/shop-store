@@ -11,6 +11,9 @@ export interface Product {
   imageUrl: string
   description: string
   quantity: number
+  category:{
+    name:number
+  }
 }
 
 export enum ProductActionTypes {

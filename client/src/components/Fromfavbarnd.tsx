@@ -68,7 +68,8 @@ function Fromfavbarnd() {
               />
               <Link to={`/p/${item._id}`}
                 css={css`
-                  text-align: left;
+                  text-decoration: none;
+                  color: #000;
                 `}
               >
                 {item.description}

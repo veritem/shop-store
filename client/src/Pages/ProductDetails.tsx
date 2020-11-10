@@ -4,23 +4,26 @@
 import {css,jsx} from '@emotion/core'
 import React from 'react'
 import { useState,useEffect } from 'react'
-import {useParams} from 'react-router-dom'
+import {useHistory, useParams} from 'react-router-dom'
 import axios from 'axios'
+import { Product } from 'src/store/types/product'
+import { useDispatch } from 'react-redux'
+import {addtoCart} from '../store/actions/cartsActions'
+
 
 function ProductDetails() {
-  const [product,setProduct] = useState({
-    _id:'',
-    price:0,
-    name:'',
-    inStock:0,
-    imageUrl:'',
-    description:'',
-    category:{
-      name:''
-    }
-  })
+  const [product,setProduct] = useState<Product>()
 
   const { id }:{ id:string } = useParams()
+
+  const dispatch = useDispatch()
+
+  const history = useHistory()
+
+  const addToCart = (product: any) => {
+    dispatch(addtoCart(product))
+    history.push('/cart')
+  }
 
 
   useEffect(() => {
@@ -58,7 +61,7 @@ function ProductDetails() {
           `}
         >
           <img
-            src={product.imageUrl}
+            src={product?.imageUrl}
             alt='imac'
             id='prod_img'
             css={css`
@@ -69,24 +72,25 @@ function ProductDetails() {
         <div
           className='product_info'
         >
-          <h1>{product.name} </h1>
+          <h1>{product?.name} </h1>
            <h2 css={css`
               font-style: italic;
                   font-weight: normal;
                   font-size: 1rem;
                   margin-bottom:30px;
-           `}>{product.category.name}</h2>
+           `}>{product?.category.name}</h2>
            <p css={css`
            margin-bottom:1rem;
-           `}>${product.price}</p>
+           `}>${product?.price}</p>
           <p
             css={css`
               margin-bottom: 2rem;
             `}
           >
-            {product.description}
+            {product?.description}
           </p>
           <button
+          onClick={() => addToCart(product)}
             css={css`
               padding: 0.5rem;
               border-radius: 1rem;
