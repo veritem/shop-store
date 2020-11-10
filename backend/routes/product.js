@@ -14,8 +14,8 @@ const { protect } = require('../middleware/auth')
 const Product = require('../models/Product')
 
 router.get('/', advancedResults(Product, 'category'), getProducts)
-router.get('/:id', getProduct)
 router.get('/search', searchProducts)
+router.get('/:id', getProduct)
 router.post('/', protect, addProduct)
 router.delete('/:id', protect, deleteProduct)
 

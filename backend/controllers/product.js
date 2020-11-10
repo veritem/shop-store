@@ -39,15 +39,15 @@ exports.addProduct = asyncHandler(async (req, res, next) => {
 })
 
 exports.searchProducts = asyncHandler(async (req, res, next) => {
-  const { productName } = req.query
+  const { product } = req.query
 
-  if (!productName) {
-    return next(new ErrorResponse('No search term was passed', 403))
-  }
+  if (!product) return next(new ErrorResponse('No search term was passed', 403))
 
-  console.log('Product ', productName)
+  const findProduct = await Product.find({
+    name: { $regex: '.*' + product + '.*' },
+  })
 
-  res.status(200).json({ success: true, data: 'working' })
+  res.status(200).json({ success: true, data: findProduct })
 })
 
 exports.deleteProduct = asyncHandler(async () => {
