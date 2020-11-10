@@ -22,6 +22,7 @@ exports.addtoCart = asyncHandler(async (req, res) => {
   await cartExists.save()
   res.status(200).json({ success: true, data: cartExists })
 })
+
 exports.getCart = asyncHandler(async (req, res) => {
   const cart = await Cart.findOne({ user_id: req.user._id })
 
@@ -29,6 +30,8 @@ exports.getCart = asyncHandler(async (req, res) => {
 
   res.status(200).json({ success: true, data: cart })
 })
+
+
 exports.incrementProduct = asyncHandler(async (req, res) => {
   const { cartItemId } = req.params
 
@@ -51,6 +54,8 @@ exports.incrementProduct = asyncHandler(async (req, res) => {
     .status(201)
     .json({ success: false, data: 'No product found with this id' })
 })
+
+
 exports.decrementProduct = asyncHandler(async (req, res) => {
   const { cartItemId } = req.params
 

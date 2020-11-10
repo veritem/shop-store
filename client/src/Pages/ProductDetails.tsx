@@ -1,22 +1,55 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import {css,jsx} from '@emotion/core'
 import React from 'react'
-import { MouseEvent, useState, useRef, Fragment } from 'react'
-import imac from '../../assets/products/imac.png'
+import { useState, useRef, Fragment,useEffect } from 'react'
+import {useParams} from 'react-router-dom'
+import axios from 'axios'
 
 function ProductDetails() {
   const [quantity, setQuantity] = useState<string>('1')
+  const [product,setProduct] = useState({
+    _id:'',
+    price:0,
+    name:'',
+    inStock:0,
+    imageUrl:'',
+    description:'',
+    category:{
+      name:''
+    }
+  })
+
+  const { id }:{ id:string } = useParams()
+
+
+  useEffect(() => {
+     async  function getProduct(){
+       try {
+        const result = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/product/${id}`)
+
+        console.log(result.data.data)
+
+        setProduct(result.data.data)
+
+       } catch (error) {
+       console.log(error)
+       }
+     }
+      getProduct()
+    }, [id])
+
 
   const resultZoom = useRef<HTMLDivElement | null>(null)
-  const productImg = useRef<HTMLImageElement | null>(null)
+  // const productImg = useRef<HTMLImageElement | null>(null)
 
-  function handleMouseMove(e: MouseEvent<HTMLImageElement>) {
-    resultZoom.current?.classList.add('active')
-  }
+  // function handleMouseMove(e: MouseEvent<HTMLImageElement>) {
+  //   resultZoom.current?.classList.add('active')
+  // }
 
-  function handleMouseLeave(e: MouseEvent<HTMLImageElement>) {
-    resultZoom.current?.classList.remove('active')
-  }
+  // function handleMouseLeave(e: MouseEvent<HTMLImageElement>) {
+  //   resultZoom.current?.classList.remove('active')
+  // }
+
 
   return (
     <Fragment>
@@ -34,7 +67,9 @@ function ProductDetails() {
             position: relative;
           `}
         >
-          <img
+          <p>{product.name}</p>
+          <p>{product.category.name}</p>
+          {/* <img
             src={imac}
             alt='imac'
             id='prod_img'
@@ -48,7 +83,7 @@ function ProductDetails() {
             onMouseLeave={(event: MouseEvent<HTMLImageElement>): void =>
               handleMouseLeave(event)
             }
-          />
+          /> */}
           <div className='zoom_results' ref={resultZoom}></div>
         </div>
         <div

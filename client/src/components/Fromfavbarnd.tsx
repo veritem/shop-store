@@ -3,7 +3,7 @@ import { addtoCart } from '../store/actions/cartsActions'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from '../store/reducers'
 import { Product, productStateType } from '../store/types/product'
-import { useHistory } from 'react-router-dom'
+import { useHistory,Link } from 'react-router-dom'
 
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -50,7 +50,7 @@ function Fromfavbarnd() {
         {data.length > 0 ? (
           data.map(item => (
             <div
-              key={item.id}
+              key={item._id}
               css={css`
                 background-color: #fff;
                 padding: 1rem 0.5rem;
@@ -66,13 +66,13 @@ function Fromfavbarnd() {
                   height: 200px;
                 `}
               />
-              <p
+              <Link to={`/p/${item._id}`}
                 css={css`
                   text-align: left;
                 `}
               >
                 {item.description}
-              </p>
+              </Link>
 
               <div
                 css={css`

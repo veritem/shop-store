@@ -8,7 +8,7 @@ exports.getProducts = async (req, res, next) => {
 exports.getProduct = async (req, res) => {
   const { id } = req.params
 
-  const findProduct = await Product.findById(id)
+  const findProduct = await Product.findById(id).populate('category')
 
   if (!findProduct) return next(new ErrorResponse('No product found', 403))
 

@@ -1,5 +1,6 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom'
+import ProductDetails from 'src/Pages/ProductDetails'
 import Cart from '../Pages/Cart'
 import LoginPage from '../Pages/LoginPage'
 import RegisterPage from '../Pages/RegisterPage'
@@ -16,6 +17,9 @@ export const routes = () => {
         </Route>
         <Route path='/login'>
           <LoginPage />
+        </Route>
+        <Route path='/p/:id'>
+          <ProductDetails/>
         </Route>
       </Switch>
     </>

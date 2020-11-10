@@ -14,38 +14,9 @@ import {
 } from '../store/actions/cartsActions'
 import { countItems, countItemsPrice } from '../utils/cartItemsHelpers'
 
-// import StripeCheckout from 'react-stripe-checkout'
 import React from 'react'
 
 function Cart() {
-  // const product = {
-  //   name: 'AMAVON',
-  //   price: 10,
-  //   productBy: 'Amazon',
-  // }
-
-  // const makePayment = (token: any) => {
-  //   console.log(token)
-  //   const body = {
-  //     token,
-  //     product,
-  //   }
-  //   const headers = {
-  //     'Content-Type': 'application/json',
-  //   }
-
-  //   return fetch(`http://localhost:5000/api/payment`, {
-  //     method: 'POST',
-  //     headers,
-  //     body: JSON.stringify(body),
-  //   })
-  //     .then(response => {
-  //       console.log(response)
-  //       const { status } = response
-  //       console.log('STATUS ', status)
-  //     })
-  //     .catch(error => console.log(error))
-  // }
 
   const cartItem: cartStateType = useSelector(
     (state: RootState) => state.cartItem
@@ -110,7 +81,7 @@ function Cart() {
             items.map(item => (
               <div
                 className='product_list_item'
-                key={item.id}
+                key={item._id}
                 css={css`
                   display: grid;
                   width: 600px;
@@ -137,7 +108,7 @@ function Cart() {
                 >
                   {item.description}
                   <p
-                    onClick={() => removeItemFromCart(item.id)}
+                    onClick={() => removeItemFromCart(item._id)}
                     css={css`
                       color: var(--dark-red);
                       margin-top: 10px;
@@ -156,7 +127,7 @@ function Cart() {
                   `}
                 >
                   <button
-                    onClick={() => HandleincrementItem(item.id)}
+                    onClick={() => HandleincrementItem(item._id)}
                     css={css`
                       background-color: #d40000;
                       border: 1px solid #d40000;
@@ -172,7 +143,7 @@ function Cart() {
                   </button>
                   <p>{item.quantity}</p>
                   <button
-                    onClick={() => handleDcrementItem(item.id)}
+                    onClick={() => handleDcrementItem(item._id)}
                     css={css`
                       background-color: #d40000;
                       border: 1px solid #d40000;
@@ -262,10 +233,8 @@ function Cart() {
               type='text'
               id='shipping adress'
               css={css`
-                margin-left: 1rem;
                 background-color: transparent;
                 border: 1px solid #ccc;
-                color: #fff;
                 width: 100%;
                 font-size: 1rem;
                 padding: 5px 10px;
@@ -323,6 +292,20 @@ function Cart() {
             <p>Total cost</p>
             <p>${countItemsPrice(cartItem)}</p>
           </div>
+
+          <button
+              className='checkout'
+              css={css`
+                background-color: var(--dark-red);
+                color: #fff;
+                width: 100%;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 10px;
+                cursor: pointer;
+                outline: none;
+              `}
+            >Checkout</button>
 
           {/* <StripeCheckout
             stripeKey={`${process.env.REACT_APP_STRIPE_KEY}`}
