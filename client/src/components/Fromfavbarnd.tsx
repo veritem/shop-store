@@ -66,14 +66,14 @@ function Fromfavbarnd() {
                   height: 200px;
                 `}
               />
-              <Link to={`/p/${item._id}`}
+              {/* <Link to={`/p/${item._id}`}
                 css={css`
                   text-decoration: none;
                   color: #000;
                 `}
               >
                 {item.description}
-              </Link>
+              </Link> */}
 
               <div
                 css={css`
