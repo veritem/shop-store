@@ -1,8 +1,8 @@
 /** @jsxImportSource @emotion/core */
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { css,jsx} from '@emotion/core'
-import React,{ useState } from 'react'
+import { css, jsx } from '@emotion/core'
+import React, { useState } from 'react'
 
 interface SearchProps {
   searchSuggestions: string[]

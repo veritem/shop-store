@@ -1,21 +1,27 @@
 /** @jsxImportSource @emotion/core */
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { css, jsx } from '@emotion/core'
-import React, { FormEvent } from 'react'
+import React, { FormEvent, useEffect } from 'react'
 import { MouseEvent, KeyboardEvent, useRef, useState } from 'react'
-import { useTypedSelector } from 'src/store/reducers'
 import { categoryStateType } from 'src/store/types/category'
-import SuggestionsList from './SuggestionsList'
+import SuggestionsList, { Isuggestions } from './SuggestionsList'
+import axios from 'axios'
+import { useTypedSelector } from 'src/store/reducers'
 
 function SearchBar() {
   const cat_list = useRef<HTMLUListElement | null>(null)
   const cat_curr = useRef<HTMLSpanElement | null>(null)
   const [showList, setShowList] = useState<boolean>(false)
   const [showSuggestions, setshowSuggestions] = useState<boolean>(false)
+  const [searchQuery, setsearchQuery] = useState<string>('')
 
   const CategoryState: categoryStateType = useTypedSelector(
     state => state.categories
   )
+
+  const [searchResults, setSearchResults] = useState<Isuggestions[]>([
+    { _id: '', name: '' },
+  ])
 
   function handleCatList() {
     setShowList(true)
@@ -27,6 +33,21 @@ function SearchBar() {
     setShowList(false)
   }
 
+  useEffect(() => {
+    async function searchProduct(query: string) {
+      try {
+        const result = await axios.get(
+          `${process.env.REACT_APP_BACKEND_URL}/api/product/search/?product=${query}`
+        )
+        console.log(result)
+        setSearchResults(result.data.data)
+      } catch (error) {
+        console.log(error)
+      }
+    }
+    searchProduct(searchQuery)
+  }, [searchQuery])
+
   function onkeydown(e: KeyboardEvent<HTMLInputElement>): any {
     setshowSuggestions(true)
     if (e.key === 'Enter') {
@@ -36,6 +57,7 @@ function SearchBar() {
   function insertUrlParam(key: string, value: string) {
     let searchParams = new URLSearchParams(window.location.search)
     searchParams.set(key, value)
+    setsearchQuery(value)
     let newurl =
       window.location.protocol +
       '//' +
@@ -145,7 +167,10 @@ function SearchBar() {
           border-bottom-right-radius: 1rem;
         `}
       />
-      <SuggestionsList isSuggestionOpen={showSuggestions} />
+      <SuggestionsList
+        isSuggestionOpen={showSuggestions}
+        suggestionResults={searchResults}
+      />
     </div>
   )
 }

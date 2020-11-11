@@ -3,12 +3,19 @@
 import { css, jsx } from '@emotion/core'
 import React from 'react'
 
+export interface Isuggestions {
+  _id: string
+  name: string
+}
+
 interface SuggestionsListProps {
   isSuggestionOpen: boolean
+  suggestionResults: Isuggestions[]
 }
 
 export const SuggestionsList: React.FC<SuggestionsListProps> = ({
   isSuggestionOpen,
+  suggestionResults,
 }): React.ReactElement => {
   return (
     <>
@@ -24,7 +31,13 @@ export const SuggestionsList: React.FC<SuggestionsListProps> = ({
             border-radius: 0.2rem;
           `}
         >
-          Hello
+          <div>
+            {suggestionResults.length > 0 ? (
+              <p>{JSON.stringify(suggestionResults)}</p>
+            ) : (
+              <p>No product found</p>
+            )}
+          </div>
         </div>
       )}
     </>
