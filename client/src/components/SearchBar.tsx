@@ -1,17 +1,17 @@
 /** @jsxImportSource @emotion/core */
-
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { css,jsx} from '@emotion/core'
-import React from 'react'
-import { useState } from 'react'
-import { MouseEvent, useRef } from 'react'
+import { css, jsx } from '@emotion/core'
+import React, { FormEvent } from 'react'
+import { MouseEvent, KeyboardEvent, useRef, useState } from 'react'
 import { useTypedSelector } from 'src/store/reducers'
 import { categoryStateType } from 'src/store/types/category'
+import SuggestionsList from './SuggestionsList'
 
 function SearchBar() {
   const cat_list = useRef<HTMLUListElement | null>(null)
   const cat_curr = useRef<HTMLSpanElement | null>(null)
   const [showList, setShowList] = useState<boolean>(false)
+  const [showSuggestions, setshowSuggestions] = useState<boolean>(false)
 
   const CategoryState: categoryStateType = useTypedSelector(
     state => state.categories
@@ -27,6 +27,30 @@ function SearchBar() {
     setShowList(false)
   }
 
+  function onkeydown(e: KeyboardEvent<HTMLInputElement>): any {
+    setshowSuggestions(true)
+    if (e.key === 'Enter') {
+      setshowSuggestions(false)
+    }
+  }
+  function insertUrlParam(key: string, value: string) {
+    let searchParams = new URLSearchParams(window.location.search)
+    searchParams.set(key, value)
+    let newurl =
+      window.location.protocol +
+      '//' +
+      window.location.host +
+      window.location.pathname +
+      '?' +
+      searchParams.toString()
+    window.history.pushState({ path: newurl }, '', newurl)
+  }
+
+  function handleChange(e: FormEvent<HTMLInputElement>) {
+    const query = e.currentTarget.value
+    insertUrlParam('query', query)
+  }
+
   return (
     <div
       css={css`
@@ -34,6 +58,7 @@ function SearchBar() {
         background-color: #ffff;
         border-radius: 2rem;
         display: flex;
+        position: relative;
       `}
     >
       <div
@@ -108,6 +133,8 @@ function SearchBar() {
         id='searching'
         autoFocus
         placeholder='Search in more 200000 products'
+        onKeyDown={onkeydown}
+        onChange={handleChange}
         css={css`
           width: 100%;
           padding: 0 1rem;
@@ -118,6 +145,7 @@ function SearchBar() {
           border-bottom-right-radius: 1rem;
         `}
       />
+      <SuggestionsList isSuggestionOpen={showSuggestions} />
     </div>
   )
 }
