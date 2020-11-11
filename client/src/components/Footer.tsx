@@ -1,8 +1,6 @@
-
 /** @jsxImportSource @emotion/core */
-
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import {css,jsx} from '@emotion/core'
+import { css, jsx } from '@emotion/core'
 import { Fragment } from 'react'
 import React from 'react'
 
@@ -88,8 +86,19 @@ function Footer() {
               More
             </a>
           </div>
-          <div className='footer_link'>
-            <h3>New Products</h3>
+          <div
+            css={css`
+              display: flex;
+              flex-direction: column;
+            `}
+          >
+            <h3
+              css={css`
+                margin-bottom: 1rem;
+              `}
+            >
+              New Products
+            </h3>
             <a
               href='http://'
               target='_blank'
@@ -135,8 +144,19 @@ function Footer() {
               Kids toys
             </a>
           </div>
-          <div className='footer_link'>
-            <h3>Support</h3>
+          <div
+            css={css`
+              display: flex;
+              flex-direction: column;
+            `}
+          >
+            <h3
+              css={css`
+                margin-bottom: 1rem;
+              `}
+            >
+              Support
+            </h3>
             <a
               href='http://'
               target='_blank'

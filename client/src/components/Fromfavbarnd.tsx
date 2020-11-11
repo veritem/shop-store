@@ -5,9 +5,8 @@ import { RootState } from '../store/reducers'
 import { Product, productStateType } from '../store/types/product'
 import { useHistory } from 'react-router-dom'
 
-
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { css,jsx} from '@emotion/core'
+import { css, jsx } from '@emotion/core'
 import React from 'react'
 
 function Fromfavbarnd() {
@@ -66,14 +65,6 @@ function Fromfavbarnd() {
                   height: 200px;
                 `}
               />
-              {/* <Link to={`/p/${item._id}`}
-                css={css`
-                  text-decoration: none;
-                  color: #000;
-                `}
-              >
-                {item.description}
-              </Link> */}
 
               <div
                 css={css`
@@ -100,7 +91,7 @@ function Fromfavbarnd() {
                     color: #ec3752;
                   `}
                 >
-                  from ${item.price * item.price + 100}{' '}
+                  from ${Math.round(item.price * item.price + 20)}
                 </p>
               </div>
               <button
