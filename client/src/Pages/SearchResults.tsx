@@ -1,3 +1,6 @@
+/** @jsxImportSource @emotion/core */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import { css, jsx } from '@emotion/core'
 import React, { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import axios from 'axios'
@@ -43,11 +46,25 @@ const SearchResults: React.FC = () => {
   return (
     <>
       <Header />
-      <div>
+      <div
+        css={css`
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+        `}
+      >
+        <h1
+          css={css`
+            margin: 2rem 0rem;
+          `}
+        >
+          Search result found "{searchResults.length}" Results
+        </h1>
+
         {searchResults.map((product, index) => (
           <ProductList key={`${index}`} product={product} />
         ))}
-        {/* {JSON.stringify(searchResults)} */}
       </div>
     </>
   )
