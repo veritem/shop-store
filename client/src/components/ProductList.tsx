@@ -14,10 +14,9 @@ export const ProductList: React.FC<ProductListProps> = ({
   return (
     <div
       css={css`
-        display: grid;
-        grid-template-columns: 1fr 3fr;
         width: 500px;
-        grid-gap: 1rem;
+        display: flex;
+        gap: 1rem;
       `}
     >
       <img
@@ -27,13 +26,48 @@ export const ProductList: React.FC<ProductListProps> = ({
         `}
         alt='productimage'
       />
-      <div>
-        <h4>{product.name}</h4>
-        <p>{product.description}</p>
-        <p>${product.price}</p>
-        <p>
-          <button>Add to cart</button>
+      <div
+        css={css`
+          align-self: center;
+        `}
+      >
+        <h4
+          css={css`
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+          `}
+        >
+          {product.name}
+        </h4>
+        <p
+          css={css`
+            margin-bottom: 1rem;
+          `}
+        >
+          {product.description}
         </p>
+        <p
+          css={css`
+            margin-bottom: 1rem;
+          `}
+        >
+          Price ${product.price}
+        </p>
+
+        <button
+          css={css`
+            background-color: var(--dark-red);
+            border: none;
+            color: #fff;
+            padding: 10px 20px;
+            outline: none;
+            cursor: pointer;
+            width: 100%;
+            border-radius: 0.5rem;
+          `}
+        >
+          Add to cart
+        </button>
       </div>
     </div>
   )

@@ -59,7 +59,8 @@ const SearchResults: React.FC = () => {
             margin: 2rem 0rem;
           `}
         >
-          Search result found "{searchResults.length}" Results
+          Search result found "{searchResults.length}"{' '}
+          {searchResults.length > 1 ? 'Items' : 'Item'}
         </h1>
 
         {searchResults.map((product, index) => (
