@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/core */
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import {css,jsx} from '@emotion/core'
+import { css, jsx } from '@emotion/core'
 import { Fragment, useEffect } from 'react'
 import Header from './Header/Header'
 import Intro from '../components/Intro'
@@ -14,7 +14,6 @@ import PopularProducts from '../components/PopularProducts'
 import { appDispatch } from 'src/store'
 import { useDispatch } from 'react-redux'
 import { fetchProducts } from 'src/store/actions/productAction'
-import { fetchCategories } from 'src/store/actions/categoriesActions'
 import React from 'react'
 
 export default function Home() {
@@ -22,7 +21,6 @@ export default function Home() {
 
   useEffect(() => {
     dispatch(fetchProducts())
-    dispatch(fetchCategories())
   }, [dispatch])
 
   return (
