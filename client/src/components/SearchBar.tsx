@@ -20,7 +20,15 @@ function SearchBar() {
   )
 
   const [searchResults, setSearchResults] = useState<Isuggestions[]>([
-    { _id: '', name: '' },
+    {
+      _id: '',
+      name: '',
+      price: 0,
+      slug: '',
+      inStock: '',
+      imageUrl: '',
+      category: '',
+    },
   ])
 
   function handleCatList() {

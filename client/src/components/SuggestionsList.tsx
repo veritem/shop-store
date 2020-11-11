@@ -6,6 +6,11 @@ import React from 'react'
 export interface Isuggestions {
   _id: string
   name: string
+  price: number
+  slug: string
+  inStock: string
+  imageUrl: string
+  category: string
 }
 
 interface SuggestionsListProps {
