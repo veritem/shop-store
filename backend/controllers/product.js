@@ -43,11 +43,22 @@ exports.searchProducts = asyncHandler(async (req, res, next) => {
 
   if (!product) return next(new ErrorResponse('No search term was passed', 403))
 
-  const findProduct = await Product.find({
-    $text: {
-      $search: product,
-      $language: 'en',
-      $caseSensitive: false,
+  // const findProduct = await Product.aggregate.search({
+  //   $search: {
+  //     autoComplete: {
+  //       query: `${product}`,
+  //       path: 'name',
+  //       fuzz: {
+  //         maxEdits: 2,
+  //       },
+  //     },
+  //   },
+  // })
+
+  const findProduct = await Product.aggregate().search({
+    text: {
+      query: `${product}`,
+      path: 'name',
     },
   })
 

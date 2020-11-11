@@ -1,0 +1,17 @@
+{
+"mappings": {
+    "dynamic": false,
+    "fields": {
+      "name": {
+        "type": "string",
+        "analyzer": "lucene.standard",
+        "multi": {
+          "keywordAnalyzer": {
+            "type": "string",
+            "analyzer": "lucene.keyword"
+          }
+        }
+      }
+    }
+  }
+}
