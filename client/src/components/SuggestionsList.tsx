@@ -11,6 +11,7 @@ export interface Isuggestions {
   inStock: string
   imageUrl: string
   category: string
+  description: string
 }
 
 interface SuggestionsListProps {

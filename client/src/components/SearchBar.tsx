@@ -28,6 +28,7 @@ function SearchBar() {
       inStock: '',
       imageUrl: '',
       category: '',
+      description: '',
     },
   ])
 

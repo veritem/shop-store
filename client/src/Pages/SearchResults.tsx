@@ -21,6 +21,7 @@ const SearchResults: React.FC = () => {
       inStock: '',
       imageUrl: '',
       category: '',
+      description: '',
     },
   ])
 
