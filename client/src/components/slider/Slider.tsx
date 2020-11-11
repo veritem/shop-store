@@ -27,10 +27,8 @@ function Slider() {
     <div
       style={{
         height: '50vh',
-        width: '90vw',
+        width: '100vw',
         overflow: 'hidden',
-        padding: '30px 20px',
-        margin: '0px 30px',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',

@@ -7,7 +7,9 @@ export const fetchProducts = (): AppThunk => {
     dispatch({ type: ProductActionTypes.FETCH_REQUEST })
     try {
       const res = (
-        await axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/product`)
+        await axios.get(
+          `${process.env.REACT_APP_BACKEND_URL}/api/product?limit=4`
+        )
       ).data
       dispatch({
         type: ProductActionTypes.FETCH_SUCCESS,
