@@ -7,6 +7,7 @@ import { categoryStateType } from 'src/store/types/category'
 import SuggestionsList, { Isuggestions } from './SuggestionsList'
 import axios from 'axios'
 import { useTypedSelector } from 'src/store/reducers'
+// import { useLocation } from 'react-router-dom'
 
 function SearchBar() {
   const cat_list = useRef<HTMLUListElement | null>(null)
@@ -14,6 +15,7 @@ function SearchBar() {
   const [showList, setShowList] = useState<boolean>(false)
   const [showSuggestions, setshowSuggestions] = useState<boolean>(false)
   const [searchQuery, setsearchQuery] = useState<string>('')
+  // const location = useLocation()
 
   const CategoryState: categoryStateType = useTypedSelector(
     state => state.categories
@@ -61,8 +63,12 @@ function SearchBar() {
     setshowSuggestions(true)
     if (e.key === 'Enter') {
       setshowSuggestions(false)
+      if (searchQuery) {
+        window.location.reload()
+      }
     }
   }
+
   function insertUrlParam(key: string, value: string) {
     let searchParams = new URLSearchParams(window.location.search)
     searchParams.set(key, value)
@@ -71,9 +77,10 @@ function SearchBar() {
       window.location.protocol +
       '//' +
       window.location.host +
-      window.location.pathname +
+      '/s' +
       '?' +
       searchParams.toString()
+    console.log(window.location.pathname)
     window.history.pushState({ path: newurl }, '', newurl)
   }
 
