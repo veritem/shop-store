@@ -1,4 +1,5 @@
 - [ ] Plan for how database schema should be updated
+- [ ] Add animations on page exploring framer-motion
 - [ ] Adding about 50 products in the database to play around with
 - [ ] Handle authentication and admin redirects
 - [ ] Create an account panel for logged in users
@@ -7,3 +8,5 @@
 
 
 - [ ] Schema design
+    - [ ] orders
+    - [ ] category
