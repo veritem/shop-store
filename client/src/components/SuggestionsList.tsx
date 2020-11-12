@@ -2,6 +2,7 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { css, jsx } from '@emotion/core'
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export interface Isuggestions {
   _id: string
@@ -38,11 +39,24 @@ export const SuggestionsList: React.FC<SuggestionsListProps> = ({
           `}
         >
           <div>
-            {suggestionResults.length > 0 ? (
-              <p>{JSON.stringify(suggestionResults)}</p>
-            ) : (
-              <p>No product found</p>
-            )}
+            {suggestionResults.map(suggestion => (
+              <Link
+                to={`/p/${suggestion._id}`}
+                key={`${suggestion._id}`}
+                css={css`
+                  display: block;
+                  color: #000;
+                  margin: 1rem;
+                  text-decoration: none;
+                  &:hover {
+                    background-color: #ccc;
+                  }
+                `}
+              >
+                <h5>{suggestion.name}</h5>
+                <p>{suggestion.description}</p>
+              </Link>
+            ))}
           </div>
         </div>
       )}
