@@ -55,14 +55,15 @@ const SearchResults: React.FC = () => {
           flex-direction: column;
         `}
       >
-        <h1
+        <h2
           css={css`
             margin: 2rem 0rem;
           `}
         >
-          Search result found "{searchResults.length}"{' '}
-          {searchResults.length > 1 ? 'Items' : 'Item'}
-        </h1>
+          Search result found {searchResults.length}{' '}
+          {searchResults.length > 1 ? 'Items' : 'Item'} for "
+          {query.split('=')[1]}"
+        </h2>
 
         {searchResults.map((product, index) => (
           <ProductList key={`${index}`} product={product} />
