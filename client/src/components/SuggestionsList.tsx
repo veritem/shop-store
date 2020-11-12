@@ -48,6 +48,8 @@ export const SuggestionsList: React.FC<SuggestionsListProps> = ({
                   color: #000;
                   margin: 1rem;
                   text-decoration: none;
+                  padding: 0.75rem;
+                  border-bottom: 1px solid #ccc;
                   &:hover {
                     background-color: #ccc;
                   }

@@ -7,7 +7,6 @@ import { categoryStateType } from 'src/store/types/category'
 import SuggestionsList, { Isuggestions } from './SuggestionsList'
 import axios from 'axios'
 import { useTypedSelector } from 'src/store/reducers'
-// import { useLocation } from 'react-router-dom'
 
 function SearchBar() {
   const cat_list = useRef<HTMLUListElement | null>(null)
@@ -15,7 +14,6 @@ function SearchBar() {
   const [showList, setShowList] = useState<boolean>(false)
   const [showSuggestions, setshowSuggestions] = useState<boolean>(false)
   const [searchQuery, setsearchQuery] = useState<string>('')
-  // const location = useLocation()
 
   const CategoryState: categoryStateType = useTypedSelector(
     state => state.categories
@@ -50,11 +48,8 @@ function SearchBar() {
         const result = await axios.get(
           `${process.env.REACT_APP_BACKEND_URL}/api/product/search/?product=${query}`
         )
-        console.log(result)
         setSearchResults(result.data.data)
-      } catch (error) {
-        console.log(error)
-      }
+      } catch (error) {}
     }
     searchProduct(searchQuery)
   }, [searchQuery])
@@ -80,7 +75,6 @@ function SearchBar() {
       '/s' +
       '?' +
       searchParams.toString()
-    console.log(window.location.pathname)
     window.history.pushState({ path: newurl }, '', newurl)
   }
 
@@ -183,10 +177,12 @@ function SearchBar() {
           border-bottom-right-radius: 1rem;
         `}
       />
-      <SuggestionsList
-        isSuggestionOpen={showSuggestions}
-        suggestionResults={searchResults}
-      />
+      {searchResults.length >= 1 && (
+        <SuggestionsList
+          isSuggestionOpen={showSuggestions}
+          suggestionResults={searchResults}
+        />
+      )}
     </div>
   )
 }
