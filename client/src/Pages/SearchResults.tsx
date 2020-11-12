@@ -15,6 +15,7 @@ function useQuery() {
 const SearchResults: React.FC = () => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [query, setquery] = useState<string>(useQuery().toString())
+
   const [searchResults, setSearchResults] = useState<Isuggestions[]>([
     {
       _id: '',

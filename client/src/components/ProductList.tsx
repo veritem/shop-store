@@ -3,6 +3,9 @@
 import { css, jsx } from '@emotion/core'
 import React from 'react'
 import { Isuggestions } from './SuggestionsList'
+import { useDispatch } from 'react-redux'
+import { addtoCart } from '../store/actions/cartsActions'
+import { useHistory } from 'react-router-dom'
 
 interface ProductListProps {
   product: Isuggestions
@@ -11,6 +14,15 @@ interface ProductListProps {
 export const ProductList: React.FC<ProductListProps> = ({
   product,
 }): React.ReactElement => {
+  const dispatch = useDispatch()
+
+  const history = useHistory()
+
+  const addToCart = (product: any) => {
+    dispatch(addtoCart(product))
+    history.push('/cart')
+  }
+
   return (
     <div
       css={css`
@@ -55,6 +67,7 @@ export const ProductList: React.FC<ProductListProps> = ({
         </p>
 
         <button
+          onClick={() => addToCart(product)}
           css={css`
             background-color: var(--dark-red);
             border: none;
