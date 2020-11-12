@@ -7,8 +7,6 @@ exports.getProducts = async (req, res, next) => {
 }
 
 exports.getProduct = async (req, res) => {
-  console.log(req)
-
   const { id } = req.params
 
   const findProduct = await Product.findById(id).populate('category')
