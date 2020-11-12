@@ -30,7 +30,7 @@ export const cartReducer = (state = initalState, action: any) => {
       }
     case cartActionTypes.ADD_TO_CART:
       let index = state.data.items.findIndex(
-        (product) => product._id === action.payload._id
+        product => product._id === action.payload._id
       )
 
       if (index === -1) {
@@ -48,7 +48,7 @@ export const cartReducer = (state = initalState, action: any) => {
         data: {
           ...state.data,
           items: state.data.items.filter(
-            (item) => item._id !== action.payload.id
+            item => item._id !== action.payload.id
           ),
         },
       }
@@ -58,7 +58,7 @@ export const cartReducer = (state = initalState, action: any) => {
         ...state,
         data: {
           ...state.data,
-          items: state.data.items.map((it) =>
+          items: state.data.items.map(it =>
             it._id === action.payload.id
               ? { ...it, quantity: it.quantity += 1 }
               : it
@@ -70,7 +70,7 @@ export const cartReducer = (state = initalState, action: any) => {
         ...state,
         data: {
           ...state.data,
-          items: state.data.items.map((it) =>
+          items: state.data.items.map(it =>
             it._id === action.payload.id
               ? {
                   ...it,
