@@ -41,6 +41,8 @@ function ShopByCat() {
             css={css`
               background-color: #fff;
               border-radius: 5px;
+              text-decoration: none;
+              color: #000;
             `}
           >
             <img
@@ -63,83 +65,6 @@ function ShopByCat() {
             </p>
           </Link>
         ))}
-
-        {/* <div></div>
-        <div
-          css={css`
-            background-color: #fff;
-            border-radius: 5px;
-          `}
-        >
-          <img
-            src={homeApplicants}
-            alt='Smart phones'
-            css={css`
-              width: 100%;
-              height: 200px;
-            `}
-          />
-          <p
-            css={css`
-              text-align: center;
-              font-size: 1rem;
-              font-weight: bold;
-              padding: 2rem;
-            `}
-          >
-            Home applicants and home materials
-          </p>
-        </div>
-        <div
-          css={css`
-            background-color: #fff;
-            border-radius: 5px;
-          `}
-        >
-          <img
-            src={tvs}
-            alt='Smart phones'
-            css={css`
-              width: 100%;
-              height: 200px;
-            `}
-          />
-          <p
-            css={css`
-              text-align: center;
-              font-size: 1rem;
-              font-weight: bold;
-              padding: 2rem;
-            `}
-          >
-            Tvs and Ultra wide monitors
-          </p>
-        </div>
-        <div
-          css={css`
-            background-color: #fff;
-            border-radius: 5px;
-          `}
-        >
-          <img
-            src={fashion}
-            alt='Smart phones'
-            css={css`
-              width: 100%;
-              height: 200px;
-            `}
-          />
-          <p
-            css={css`
-              text-align: center;
-              font-size: 1rem;
-              font-weight: bold;
-              padding: 2rem;
-            `}
-          >
-            Men and women from fashion industry experts
-          </p>
-        </div> */}
       </div>
     </div>
   )
