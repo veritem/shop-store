@@ -36,12 +36,7 @@ export function Category(): React.ReactElement {
   }, [id])
 
   return (
-    <div
-      css={css`
-        width: 100vw;
-        overflow: hidden;
-      `}
-    >
+    <>
       <Header />
       <div
         css={css`
@@ -81,7 +76,16 @@ export function Category(): React.ReactElement {
                   width: 200px;
                 `}
               />
-              <Link to={`/p/${prod._id}`}>
+              <Link
+                to={`/p/${prod._id}`}
+                css={css`
+                  text-decoration: none;
+                  display: flex;
+                  color: #000;
+                  flex-direction: column;
+                  justify-content: space-evenly;
+                `}
+              >
                 <h3>{prod.name}</h3>
                 <p>{prod.description}</p>
               </Link>
@@ -89,7 +93,7 @@ export function Category(): React.ReactElement {
           ))}
         </div>
       </div>
-    </div>
+    </>
   )
 }
 
