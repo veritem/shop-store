@@ -1,3 +1,7 @@
+/** @jsxImportSource @emotion/core */
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import { css, jsx } from '@emotion/core'
 import React, { useEffect } from 'react'
 import './Header.css'
 import CatHeader from '../../components/CatHeader'
@@ -17,18 +21,71 @@ function Header() {
   return (
     <>
       <SubHeader />
-      <nav>
-        <div className='logo'>Rustique</div>
+      <nav
+        css={css`
+          background-color: #ef464d;
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          font-family: Lato, sans-serif;
+          padding: 0.4rem 0rem;
+        `}
+      >
+        <Link
+          to={'/'}
+          css={css`
+            color: var(--whitish);
+            font-weight: 800;
+            font-size: 1.5rem;
+            text-decoration: none;
+          `}
+        >
+          Rustique
+        </Link>
         <div className='searchbar'>
           <SearchBar />
         </div>
-        <div className='more'>
-          <Link to='#'>
-            <i className='far fa-heart' />
+        <div
+          css={css`
+            display: flex;
+            justify-content: space-between;
+            text-align: center;
+          `}
+        >
+          <Link
+            to='#'
+            css={css`
+              text-decoration: none;
+              margin-right: 1rem;
+              color: #fff;
+            `}
+          >
+            <i
+              className='far fa-heart'
+              css={css`
+                font-size: 1.5rem;
+                color: #fff;
+                text-align: center;
+              `}
+            />
             <p>Your wish list</p>
           </Link>
-          <Link to='cart'>
-            <i className='fas fa-cart-plus' />
+          <Link
+            to='cart'
+            css={css`
+              text-decoration: none;
+              margin-right: 1rem;
+              color: #fff;
+            `}
+          >
+            <i
+              className='fas fa-cart-plus'
+              css={css`
+                font-size: 1.5rem;
+                color: #fff;
+                text-align: center;
+              `}
+            />
             <p>Your cart</p>
           </Link>
         </div>

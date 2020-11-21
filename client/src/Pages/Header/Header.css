@@ -1,40 +1,13 @@
-nav {
-	background-color: #ef464d;
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
-	font-family: Lato, sans-serif;
-	padding: 0.4rem 0rem;
-}
-
-.logo {
-	color: var(--whitish);
-	font-weight: 800;
-	font-size: 1.5rem;
-}
-
-.more {
-	display: flex;
-	justify-content: space-between;
-	text-align: center;
-}
-
-.more a {
-	text-decoration: none;
-	margin-right: 1rem;
-	color: #fff;
-}
-
 .more i {
-	font-size: 1.5rem;
-	color: #fff;
-	text-align: center;
+  font-size: 1.5rem;
+  color: #fff;
+  text-align: center;
 }
 
 .more img {
-	background-color: #f1f3de;
-	margin-right: 1rem;
-	padding: 0.5rem;
-	border-radius: 50%;
-	fill: #fff;
+  background-color: #f1f3de;
+  margin-right: 1rem;
+  padding: 0.5rem;
+  border-radius: 50%;
+  fill: #fff;
 }
