@@ -51,6 +51,16 @@ exports.searchProducts = asyncHandler(async (req, res, next) => {
   res.status(200).json({ success: true, data: findProduct })
 })
 
+exports.getProductByCat = asyncHandler(async (req, res) => {
+  const { id } = req.params
+
+  if (!id) return next(new ErrorResponse('No id passed was passed', 403))
+
+  const products = await Product.find({ category: id })
+
+  res.status(200).json({ success: true, data: products })
+})
+
 exports.deleteProduct = asyncHandler(async () => {
   const { id } = req.params
   await Product.findByIdAndRemove(id)

@@ -7,6 +7,7 @@ const {
   addProduct,
   deleteProduct,
   searchProducts,
+  getProductByCat,
 } = require('../controllers/product')
 const advancedResults = require('../middleware/advancedResults')
 
@@ -16,6 +17,7 @@ const Product = require('../models/Product')
 router.get('/', advancedResults(Product, 'category'), getProducts)
 router.get('/search', searchProducts)
 router.get('/:id', getProduct)
+router.get('/category/:id', getProductByCat)
 router.post('/', protect, addProduct)
 router.delete('/:id', protect, deleteProduct)
 
