@@ -4,7 +4,7 @@ const CategorySchema = new mongoose.Schema({
   name: {
     type: String,
   },
-  photo: {
+  photo_url: {
     type: String,
   },
   created_at: {

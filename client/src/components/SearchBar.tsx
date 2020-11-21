@@ -163,7 +163,6 @@ function SearchBar() {
         type='text'
         name='searchbox'
         id='searching'
-        autoFocus
         placeholder='Search in more 200000 products'
         onKeyDown={onkeydown}
         onChange={handleChange}
