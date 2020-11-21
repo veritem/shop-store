@@ -1,9 +1,5 @@
 /** @jsxImportSource @emotion/core */
 
-import smartPhones from '../assets/categories/smartPhones.png'
-import homeApplicants from '../assets/categories/home.png'
-import tvs from '../assets/categories/tvs.png'
-import fashion from '../assets/categories/fashion.png'
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { css, jsx } from '@emotion/core'
 import React from 'react'
@@ -14,8 +10,6 @@ function ShopByCat() {
   const CategoryState: categoryStateType = useTypedSelector(
     state => state.categories
   )
-
-  console.log(CategoryState)
 
   return (
     <div
@@ -39,31 +33,36 @@ function ShopByCat() {
           grid-gap: 1rem;
         `}
       >
-        <div
-          css={css`
-            background-color: #fff;
-            border-radius: 5px;
-          `}
-        >
-          <img
-            src={smartPhones}
-            alt='Smart phones'
+        {CategoryState.categories.map(cat => (
+          <div
+            key={cat._id}
             css={css`
-              width: 100%;
-              height: 200px;
-            `}
-          />
-          <p
-            css={css`
-              text-align: center;
-              font-size: 1rem;
-              font-weight: bold;
-              padding: 2rem;
+              background-color: #fff;
+              border-radius: 5px;
             `}
           >
-            Smart phones
-          </p>
-        </div>
+            <img
+              src={cat.photo_url}
+              alt={cat.name}
+              css={css`
+                width: 100%;
+                height: 200px;
+              `}
+            />
+            <p
+              css={css`
+                text-align: center;
+                font-size: 1rem;
+                font-weight: bold;
+                padding: 2rem;
+              `}
+            >
+              {cat.name}
+            </p>
+          </div>
+        ))}
+
+        {/* <div></div>
         <div
           css={css`
             background-color: #fff;
@@ -138,7 +137,7 @@ function ShopByCat() {
           >
             Men and women from fashion industry experts
           </p>
-        </div>
+        </div> */}
       </div>
     </div>
   )

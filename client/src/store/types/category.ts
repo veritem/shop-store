@@ -4,7 +4,7 @@ export interface categoryStateType {
   errors?: string
 }
 export interface Category {
-  id: string
+  _id: string
   name: string
   photo_url: string
 }
