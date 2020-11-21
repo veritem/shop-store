@@ -35,11 +35,8 @@ const SearchResults: React.FC = () => {
         const result = await axios.get(
           `${process.env.REACT_APP_BACKEND_URL}/api/product/search/?product=${query}`
         )
-        console.log(result)
         setSearchResults(result.data.data)
-      } catch (error) {
-        console.log(error)
-      }
+      } catch (error) {}
     }
     searchProduct((query as unknown) as string)
   }, [query])

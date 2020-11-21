@@ -6,6 +6,7 @@ export interface categoryStateType {
 export interface Category {
   id: string
   name: string
+  photo_url: string
 }
 export enum categoryActionTypes {
   FETCH_CATEGORIES = 'FETCH_CAT_REQUEST',

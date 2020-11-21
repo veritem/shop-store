@@ -1,15 +1,22 @@
 /** @jsxImportSource @emotion/core */
 
-
 import smartPhones from '../assets/categories/smartPhones.png'
 import homeApplicants from '../assets/categories/home.png'
 import tvs from '../assets/categories/tvs.png'
 import fashion from '../assets/categories/fashion.png'
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { css,jsx} from '@emotion/core'
+import { css, jsx } from '@emotion/core'
 import React from 'react'
+import { useTypedSelector } from 'src/store/reducers'
+import { categoryStateType } from 'src/store/types/category'
 
 function ShopByCat() {
+  const CategoryState: categoryStateType = useTypedSelector(
+    state => state.categories
+  )
+
+  console.log(CategoryState)
+
   return (
     <div
       css={css`

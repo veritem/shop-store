@@ -72,7 +72,6 @@ export const registerUser = (
     // await setData(token)
     dispatch({ type: AuthActionTypes.REGISTER_SUCCESS, payload: { token } })
   } catch (error) {
-    console.log(error)
     dispatch({ type: AuthActionTypes.REGISTER_FAILURE })
   }
 }

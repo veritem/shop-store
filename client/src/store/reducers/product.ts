@@ -14,7 +14,6 @@ export const productReducer = (state = initialState, action: any) => {
         loading: true,
       }
     case ProductActionTypes.FETCH_SUCCESS:
-      console.log(action)
       return {
         ...state,
         loading: false,

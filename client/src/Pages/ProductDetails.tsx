@@ -32,9 +32,7 @@ function ProductDetails() {
         )
 
         setProduct(result.data.data)
-      } catch (error) {
-        console.log(error)
-      }
+      } catch (error) {}
     }
     getProduct()
   }, [id])
