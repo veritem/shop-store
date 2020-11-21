@@ -5,6 +5,7 @@ import { css, jsx } from '@emotion/core'
 import React from 'react'
 import { useTypedSelector } from 'src/store/reducers'
 import { categoryStateType } from 'src/store/types/category'
+import { Link } from 'react-router-dom'
 
 function ShopByCat() {
   const CategoryState: categoryStateType = useTypedSelector(
@@ -34,7 +35,8 @@ function ShopByCat() {
         `}
       >
         {CategoryState.categories.map(cat => (
-          <div
+          <Link
+            to={`/c/${cat._id}`}
             key={cat._id}
             css={css`
               background-color: #fff;
@@ -59,7 +61,7 @@ function ShopByCat() {
             >
               {cat.name}
             </p>
-          </div>
+          </Link>
         ))}
 
         {/* <div></div>
