@@ -6,6 +6,7 @@ import SearchResults from 'src/Pages/SearchResults'
 import Cart from '../Pages/Cart'
 import LoginPage from '../Pages/Login'
 import RegisterPage from '../Pages/Register'
+import Admin from '../Pages/admin'
 
 export const routes = () => {
   return (
@@ -28,6 +29,9 @@ export const routes = () => {
         </Route>
         <Route path='/c/:id'>
           <Category />
+        </Route>
+        <Route path=''>
+          <Admin />
         </Route>
       </Switch>
     </>
