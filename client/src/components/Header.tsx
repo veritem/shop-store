@@ -3,10 +3,9 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { css, jsx } from '@emotion/core'
 import React, { useEffect } from 'react'
-import './Header.css'
-import CatHeader from '../../components/CatHeader'
-import SearchBar from '../../components/SearchBar'
-import SubHeader from '../../components/SubHeader'
+import CatHeader from './CatHeader'
+import SearchBar from './SearchBar'
+import SubHeader from './SubHeader'
 import { Link } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { appDispatch } from 'src/store'

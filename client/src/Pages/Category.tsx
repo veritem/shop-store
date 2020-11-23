@@ -5,7 +5,7 @@ import { css, jsx } from '@emotion/core'
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router'
 import axios from 'axios'
-import Header from './Header/Header'
+import Header from '../components/Header'
 import { Product } from 'src/store/types/product'
 import { Link } from 'react-router-dom'
 

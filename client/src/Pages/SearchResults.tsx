@@ -5,7 +5,7 @@ import React, { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import axios from 'axios'
 import { Isuggestions } from 'src/components/SuggestionsList'
-import Header from './Header/Header'
+import Header from '../components/Header'
 import ProductList from 'src/components/ProductList'
 
 function useQuery() {

@@ -3,7 +3,7 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { css, jsx } from '@emotion/core'
 import { Fragment, useEffect } from 'react'
-import Header from './Header/Header'
+import Header from '../components/Header'
 import Intro from '../components/Intro'
 import Fromfavbarnd from '../components/Fromfavbarnd'
 import ShopByCat from '../components/ShopByCat'
