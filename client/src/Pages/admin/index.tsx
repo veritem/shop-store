@@ -16,29 +16,38 @@ export const index = (): React.ReactElement => {
           div {
             height: 150px;
             border-radius: 0.5rem;
+            text-align: right;
+            padding: 1rem;
+            h3 {
+              font-size: 3rem;
+              color: #dede;
+            }
+            p {
+              color: #fefefe;
+            }
           }
         `}
       >
         <div
           css={css`
-            background-color: #3f47f4;
+            background-color: #d90429;
           `}
         >
-          <h3>120</h3> users
+          <h3>120</h3> <p>users</p>
         </div>
         <div
           css={css`
-            background-color: #f3b82a;
+            background-color: #8d99ae;
           `}
         >
-          <h3>2040</h3> Orders
+          <h3>2040</h3> <p>Orders</p>
         </div>
         <div
           css={css`
-            background-color: #1ce2b1;
+            background-color: #2b2d42;
           `}
         >
-          <h3>30</h3> Products
+          <h3>30</h3> <p>Products</p>
         </div>
       </div>
     </AdminLayout>
