@@ -21,7 +21,7 @@ export const AdminLayout: React.FC<AdminLayoutProps> = ({
     >
       <div
         css={css`
-          background-color: #ef233c;
+          background-color: #2b2d42;
           height: 100vh;
           padding: 2rem 3rem;
         `}
@@ -54,7 +54,19 @@ export const AdminLayout: React.FC<AdminLayoutProps> = ({
           <Link to={'/logout'}>Logout</Link>
         </div>
       </div>
-      <div>{children}</div>
+      <div>
+        <nav
+          css={css`
+            background-color: #4e535c;
+            padding: 10px 20px;
+            margin-bottom: 2rem;
+            color: #fff;
+          `}
+        >
+          Welcome, Verite
+        </nav>
+        {children}
+      </div>
     </div>
   )
 }
