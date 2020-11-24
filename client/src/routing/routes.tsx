@@ -10,6 +10,7 @@ import Admin from '../Pages/admin'
 import Order from 'src/Pages/admin/orders'
 import Products from 'src/Pages/admin/products'
 import Users from 'src/Pages/admin/users'
+import NotFound from 'src/Pages/NotFound'
 
 export const routes = () => {
   return (
@@ -44,6 +45,9 @@ export const routes = () => {
         </Route>
         <Route path='/admin/users'>
           <Users />
+        </Route>
+        <Route path='/***'>
+          <NotFound />
         </Route>
       </Switch>
     </>
