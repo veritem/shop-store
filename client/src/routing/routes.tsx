@@ -7,6 +7,9 @@ import Cart from '../Pages/Cart'
 import LoginPage from '../Pages/Login'
 import RegisterPage from '../Pages/Register'
 import Admin from '../Pages/admin'
+import Order from 'src/Pages/admin/orders'
+import Products from 'src/components/products'
+import Users from 'src/Pages/admin/users'
 
 export const routes = () => {
   return (
@@ -30,8 +33,17 @@ export const routes = () => {
         <Route path='/c/:id'>
           <Category />
         </Route>
-        <Route path=''>
+        <Route exact path='/admin'>
           <Admin />
+        </Route>
+        <Route path='/admin/orders'>
+          <Order />
+        </Route>
+        <Route path='/admin/products'>
+          <Products />
+        </Route>
+        <Route path='/admin/users'>
+          <Users />
         </Route>
       </Switch>
     </>

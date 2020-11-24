@@ -47,11 +47,11 @@ export const AdminLayout: React.FC<AdminLayoutProps> = ({
             }
           `}
         >
-          <Link to={'/'}>Home</Link>
-          <Link to={'/products'}>products</Link>
-          <Link to={'/users'}>Users</Link>
-          <Link to={'/orders'}>Orders</Link>
-          <Link to={'/orders'}>Logout</Link>
+          <Link to={'/admin'}>Home</Link>
+          <Link to={'/admin/products'}>products</Link>
+          <Link to={'/admin/users'}>Users</Link>
+          <Link to={'/admin/orders'}>Orders</Link>
+          <Link to={'/logout'}>Logout</Link>
         </div>
       </div>
       <div>{children}</div>
