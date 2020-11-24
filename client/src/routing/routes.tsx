@@ -8,7 +8,7 @@ import LoginPage from '../Pages/Login'
 import RegisterPage from '../Pages/Register'
 import Admin from '../Pages/admin'
 import Order from 'src/Pages/admin/orders'
-import Products from 'src/components/products'
+import Products from 'src/Pages/admin/products'
 import Users from 'src/Pages/admin/users'
 
 export const routes = () => {
