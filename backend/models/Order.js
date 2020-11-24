@@ -22,11 +22,15 @@ const OrderSchema = new mongoose.Schema({
       },
     },
   ],
+  price: {
+    type: String,
+    required: true,
+  },
   shippingAddress: {
     type: String,
     required: true,
   },
-  isShipped: {
+  isApproved: {
     type: Boolean,
     required: true,
   },
