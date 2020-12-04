@@ -2,7 +2,7 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { css, jsx } from '@emotion/core'
 import React from 'react'
-import UserTable from 'src/components/UserTable'
+import CategoriesTable from 'src/components/CategoriesTable'
 import AdminLayout from 'src/layout/AdminLayout'
 
 export const index = (): React.ReactElement => {
@@ -52,7 +52,7 @@ export const index = (): React.ReactElement => {
             <h3>30</h3> <p>Products</p>
           </div>
         </div>
-        <UserTable />
+        <CategoriesTable />
       </>
     </AdminLayout>
   )
