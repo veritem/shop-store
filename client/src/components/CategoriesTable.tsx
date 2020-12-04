@@ -38,11 +38,32 @@ function UserTable() {
         Product Categories
       </h4>
 
-      <div>
-        {category?.map(item => (
-          <p>{item.name}</p>
-        ))}
-      </div>
+      <table
+        css={css`
+          border-collapse: collapse;
+          td,
+          th {
+            border: 1px solid #999;
+            padding: 0.5rem;
+            text-align: left;
+          }
+        `}
+      >
+        <thead>
+          <tr>
+            <th>id</th>
+            <th>name</th>
+          </tr>
+        </thead>
+        <tbody>
+          {category?.map((item, index) => (
+            <tr>
+              <td>{index + 1}</td>
+              <td>{item.name}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   )
 }
