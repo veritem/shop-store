@@ -26,13 +26,13 @@ app.use(express.static(path.join(__dirname, 'public')))
 const auth = require('./routes/auth')
 const category = require('./routes/cetegory')
 const product = require('./routes/product')
-const payments = require('./routes/payment')
+// const payments = require('./routes/payment')
 const cart = require('./routes/cart')
 
 app.use('/api/auth', auth)
 app.use('/api/category', category)
 app.use('/api/product', product)
-app.use('/api/payment', payments)
+// app.use('/api/payment', payments)
 app.use('/api/cart', cart)
 
 //error handling
