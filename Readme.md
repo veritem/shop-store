@@ -5,7 +5,7 @@
 #### User stories
 
 - [x] User can view products available in the store
-- [x] User can user can view products by cetegory
+- [x] User can user can view products by category
 - [x] User can search for products in the store
 - [ ] User can search for products in categories
 - [x] Auto complete for products searching
@@ -43,7 +43,7 @@
 
   - Reactjs with TypeScript
   - FramerMotion for animation
-  - Emotion for general stayling
+  - Emotion for general styling
   - Redux for state management
 
 > Payment Gateways

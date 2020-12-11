@@ -4,8 +4,6 @@
 	"description": "Full stack mern stack application",
 	"main": "server.js",
 	"dependencies": {
-		"@popmotion/popcorn": "^0.4.4",
-		"@types/react-redux": "^7.1.9",
 		"bcryptjs": "^2.4.3",
 		"colors": "^1.4.0",
 		"concurrently": "^5.3.0",
@@ -16,17 +14,14 @@
 		"jsonwebtoken": "^8.5.1",
 		"mongoose": "^5.10.0",
 		"nodemon": "^2.0.4",
-		"react-stripe-checkout": "^2.6.3",
 		"slugify": "^1.4.5",
-		"stripe": "^8.102.0",
 		"uuid": "^8.3.0"
 	},
 	"devDependencies": {},
 	"scripts": {
 		"start": "node server",
-		"server": "nodemon server --ignore client",
-		"client": "npm start --prefix client",
-		"dev": "concurrently \"npm run server\" \"npm run client\""
+		"dev": "nodemon server.js",
+		"client": "npm start --prefix client"
 	},
 	"repository": {
 		"type": "git",
