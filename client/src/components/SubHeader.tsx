@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/core */
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { css,jsx } from '@emotion/core'
+import { css, jsx } from '@emotion/core'
 import React from 'react'
 
 function SubHeader() {

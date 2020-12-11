@@ -2,7 +2,7 @@
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { css, jsx } from '@emotion/core'
-import React, { useEffect } from 'react'
+import React, { Fragment, useEffect } from 'react'
 import CatHeader from './CatHeader'
 import SearchBar from './SearchBar'
 import SubHeader from './SubHeader'
@@ -18,7 +18,7 @@ function Header() {
     dispatch(fetchCategories())
   }, [dispatch])
   return (
-    <>
+    <Fragment>
       <SubHeader />
       <nav
         css={css`
@@ -90,7 +90,7 @@ function Header() {
         </div>
       </nav>
       <CatHeader />
-    </>
+    </Fragment>
   )
 }
 

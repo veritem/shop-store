@@ -1,12 +1,13 @@
 /** @jsxImportSource @emotion/core */
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import { css, jsx } from '@emotion/core'
 import { addtoCart } from '../store/actions/cartsActions'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from '../store/reducers'
 import { Product, productStateType } from '../store/types/product'
 import { useHistory } from 'react-router-dom'
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { css, jsx } from '@emotion/core'
 import React from 'react'
 
 function Fromfavbarnd() {

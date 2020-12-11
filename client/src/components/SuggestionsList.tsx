@@ -1,6 +1,4 @@
-/** @jsxImportSource @emotion/core */
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { css, jsx } from '@emotion/core'
+import { css } from '@emotion/core'
 import React from 'react'
 import { Link } from 'react-router-dom'
 
