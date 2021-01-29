@@ -1,18 +1,20 @@
-name: Dependencies
-on: [push,pull_request]
+name: CI
+on: [push, pull_request]
 
 jobs:
   build:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-node@v1
-      with:
-        node-version: 14
-    - run: npm ci
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 14
+      - run: npm ci
 
   automerge:
     needs: build
     runs-on: ubuntu-latest
-  steps:
+    steps:
       - uses: fastify/github-action-merge-dependabot@v1
         if: ${{ github.actor == 'dependabot[bot]' && github.event_name == 'pull_request' }}
         with:
