@@ -9,8 +9,8 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 14
-      - run: cd "/client" && npm ci
-      - run: cd "/backend" && npm ci
+      - run: /client && npm ci
+      - run: /backend && npm ci
 
   automerge:
     needs: build
