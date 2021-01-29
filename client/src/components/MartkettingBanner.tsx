@@ -1,5 +1,7 @@
-/** @jsxImportSource @emotion/core */
-import { css, jsx } from '@emotion/core'
+/** @jsx jsx */
+
+import { jsx } from '@emotion/core'
+import css from '@emotion/css/macro'
 import cartImg from '../assets/others/1cart.png'
 import { Link } from 'react-router-dom'
 import React from 'react'
