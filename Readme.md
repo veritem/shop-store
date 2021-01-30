@@ -46,13 +46,7 @@
   - Emotion for general styling
   - Redux for state management
 
-> Payment Gateways
-
-  - Stripe
-  - PayPal
-
 > App testing
 
   - Jest
   - React testing libary
-  - Cypress
