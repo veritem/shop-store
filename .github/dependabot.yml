@@ -4,3 +4,7 @@ updates:
     directory: "/client"
     schedule:
      interval: "daily"
+  - package-ecosystem: "npm"
+    directory: "/backend"
+    schedule:
+     interval: "daily"
