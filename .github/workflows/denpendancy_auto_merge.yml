@@ -6,11 +6,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+
+      - uses: bahmutov/npm-install@v1
         with:
-          node-version: 14
-      # - run: /client && npm ci
-      # - run: /backend && npm ci
+          working-directory: client
+      - uses: bahmutov/npm-install@v1
+        with:
+          working-directory: backend
 
   automerge:
     needs: build
